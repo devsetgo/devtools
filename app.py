@@ -4,7 +4,7 @@ from unsync import unsync
 import requests
 import os
 import re
-
+import asyncio
 
 myfile = os.fspath('data/requirements.txt')
 
@@ -15,7 +15,7 @@ def openfile():
 
 def write_new_file(updates):
     f = open('data/new_requirements.txt', 'w+')
-    for i in tqdm(updates):
+    for i in updates:
         if i['newVersion'] != i['currentVersion']:
             line = f"{i['library']}=={i['newVersion']} # Change from {i['currentVersion']}"
         else:
@@ -27,7 +27,7 @@ def write_new_file(updates):
 
 def loop_calls(itemList):
     results = []
-    for i in tqdm(itemList):
+    for i in tqdm(itemList,desc='PyPi calls', total=len(itemList),ascii=True,unit=' pypiCall'):
         url = f"https://pypi.org/pypi/{i['library']}/json"
         resp = call_pypi(url)
         pip_info = {'library': i['library']
@@ -35,8 +35,6 @@ def loop_calls(itemList):
                     ,'newVersion': resp['newVersion']}
 
         results.append(pip_info)
-
-    
     return results
 
 def call_pypi(url):
