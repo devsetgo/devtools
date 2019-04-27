@@ -1,5 +1,7 @@
 # PIP Requirements Checker
-A simple way to check if your requirements.txt file is up-to-date.
+I got tired of trying to figure out which libraries are updated, so I created a simple way to check if your requirements.txt file is up-to-date. Add your requirements.txt to the data folder and then run it to check if the version has changed at PyPI.
+
+
 ### Notes
 Python 3.6 or higher
 
