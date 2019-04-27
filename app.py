@@ -24,6 +24,7 @@ def write_new_file(updates):
 
     return 'done'
 
+
 def loop_calls(itemList):
     results = []
     for i in tqdm(itemList):
@@ -34,11 +35,13 @@ def loop_calls(itemList):
                     ,'newVersion': resp['newVersion']}
 
         results.append(pip_info)
+
     
     return results
 
 def call_pypi(url):
     r = requests.get(url)
+    # print(r.status_code)
     resp = r.json()
     if r.status_code != 200:
         result = {'newVersion': resp['info']['version']}
@@ -50,17 +53,31 @@ def call_pypi(url):
 def clean_item(items):
     results = []
     for i in items:
-        l1 = i.replace(">=", " ")
-        l2 = l1.replace("==", " ")
-        l3 = re.sub("[\(\[].*?[\)\]]", "", l2)
-        # print(l3)
-        m = l3
+        logicList = ['==','>=','<=','>','<']
+        if '==' in i:
+            new_i = i.replace("==", " ")        
+        elif ">=" in i:
+            new_i = i.replace(">=", " ")
+        elif "<=" in i:
+            new_i = i.replace("<=", " ")
+        elif ">" in i:
+            new_i = i.replace(">", " ")
+        elif "<" in i:
+            new_i = i.replace("<", " ")
+        else:
+            new_i = i
+        
+        bracketList =  ['[',']','(',')']
+        cleaned_up_i = re.sub("[\(\[].*?[\)\]]", "", new_i)
+        # print(cleaned_up_i)
+        m = cleaned_up_i
         pipItem = m.split()
+        # print(pipItem)
         library = pipItem[0]
         try:
             currentVersion = pipItem[1]
         except Exception:
-            currentVersion = "None"
+            currentVersion = "Empty Version in requirements.txt"
 
         cleaned_lib = {'library': library
                         ,'currentVersion': currentVersion}
