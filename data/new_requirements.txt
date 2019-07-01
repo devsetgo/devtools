@@ -1,5 +1,5 @@
 pylint==2.3.1 # Change from Empty Version in requirements.txt
-pytest==4.6.2 # Change from Empty Version in requirements.txt
+pytest==5.0.0 # Change from Empty Version in requirements.txt
 black==19.3b0 # Change from Empty Version in requirements.txt
 autopep8==1.4.4 # Change from Empty Version in requirements.txt
 flake8==3.7.7 # Change from Empty Version in requirements.txt
