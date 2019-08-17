@@ -15,11 +15,15 @@ def openfile():
 
 def write_new_file(updates):
     f = open('data/new_requirements.txt', 'w+')
-    for i in updates:
-        if i['newVersion'] != i['currentVersion']:
-            line = f"{i['library']}=={i['newVersion']} # Change from {i['currentVersion']}"
+    sorted_list = sorted(updates, key = lambda i: i['library'])
+    # print(sorted_list)
+
+    for v in sorted_list:
+        
+        if v['newVersion'] != v['currentVersion']:
+            line = f"{v['library']}=={v['newVersion']} # Change from {v['currentVersion']}"
         else:
-            line = f"{i['library']}=={i['currentVersion']}"
+            line = f"{v['library']}=={v['currentVersion']}"
         f.write(line + '\n')
 
     return 'done'
@@ -33,8 +37,9 @@ def loop_calls(itemList):
         pip_info = {'library': i['library']
                     ,'currentVersion': i['currentVersion']
                     ,'newVersion': resp['newVersion']}
-
+    
         results.append(pip_info)
+
     return results
 
 def call_pypi(url):
@@ -79,9 +84,12 @@ def clean_item(items):
 
         cleaned_lib = {'library': library
                         ,'currentVersion': currentVersion}
-        # print(cleaned_lib)
+        print(cleaned_lib['library'])
+        lib = cleaned_lib['library']
+        if not any(l['library']==lib for l in results):
+            results.append(cleaned_lib)
 
-        results.append(cleaned_lib)
+
     # print(results)
     return results
 
@@ -91,7 +99,7 @@ def main():
     cleaned_data = clean_item(file_data)
     # print(cleaned_data)
     fulllist = loop_calls(cleaned_data)
-    # print(len(fulllist))
+    # print(fulllist)
     written = write_new_file(fulllist)
     # print (written)
 
