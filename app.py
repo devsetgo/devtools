@@ -38,6 +38,7 @@ def loop_calls(itemList):
                     ,'currentVersion': i['currentVersion']
                     ,'newVersion': resp['newVersion']}
     
+        
         results.append(pip_info)
 
     return results
@@ -56,38 +57,48 @@ def call_pypi(url):
 def clean_item(items):
     results = []
     for i in items:
-        logicList = ['==','>=','<=','>','<']
-        if '==' in i:
-            new_i = i.replace("==", " ")        
-        elif ">=" in i:
-            new_i = i.replace(">=", " ")
-        elif "<=" in i:
-            new_i = i.replace("<=", " ")
-        elif ">" in i:
-            new_i = i.replace(">", " ")
-        elif "<" in i:
-            new_i = i.replace("<", " ")
-        else:
-            new_i = i
         
-        bracketList =  ['[',']','(',')']
-        cleaned_up_i = re.sub("[\(\[].*?[\)\]]", "", new_i)
-        # print(cleaned_up_i)
-        m = cleaned_up_i
-        pipItem = m.split()
-        # print(pipItem)
-        library = pipItem[0]
-        try:
-            currentVersion = pipItem[1]
-        except Exception:
-            currentVersion = "Empty Version in requirements.txt"
+        comment = i.startswith("#")
+        recur_file = i.startswith("-")
+        empty_line =  False
+        if i:
+            empty_line =  False
 
-        cleaned_lib = {'library': library
-                        ,'currentVersion': currentVersion}
-        print(cleaned_lib['library'])
-        lib = cleaned_lib['library']
-        if not any(l['library']==lib for l in results):
-            results.append(cleaned_lib)
+        if len(i.strip()) != 0 and comment == False and recur_file == False and empty_line == False:
+            # print(i)
+            logicList = ['==','>=','<=','>','<']
+            if '==' in i:
+                new_i = i.replace("==", " ")        
+            elif ">=" in i:
+                new_i = i.replace(">=", " ")
+            elif "<=" in i:
+                new_i = i.replace("<=", " ")
+            elif ">" in i:
+                new_i = i.replace(">", " ")
+            elif "<" in i:
+                new_i = i.replace("<", " ")
+            else:
+                new_i = i
+            
+            bracketList =  ['[',']','(',')']
+            cleaned_up_i = re.sub("[\(\[].*?[\)\]]", "", new_i)
+            print(cleaned_up_i)
+            m = cleaned_up_i
+            pipItem = m.split()
+            # print(pipItem)
+
+            library = pipItem[0]
+            try:
+                currentVersion = pipItem[1]
+            except Exception:
+                currentVersion = "Empty Version in requirements.txt"
+
+            cleaned_lib = {'library': library
+                            ,'currentVersion': currentVersion}
+            # print(cleaned_lib['library'])
+            lib = cleaned_lib['library']
+            if not any(l['library']==lib for l in results):
+                results.append(cleaned_lib)
 
 
     # print(results)
