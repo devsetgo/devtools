@@ -1,5 +1,26 @@
-pylint==2.3.1 # Change from Empty Version in requirements.txt
-pytest==5.0.1 # Change from Empty Version in requirements.txt
-black==19.3b0 # Change from Empty Version in requirements.txt
-autopep8==1.4.4 # Change from Empty Version in requirements.txt
-flake8==3.7.8 # Change from Empty Version in requirements.txt
+PyJWT==1.7.1
+aiofiles==0.4.0
+aiosqlite==0.10.0
+alembic==1.0.11
+asyncpg==0.18.3
+attrs==19.1.0 # Change from 18.1.0
+click==7.0
+databases==0.2.5
+email_validator==1.0.4
+fastapi==0.35.0 # Change from 0.33.0
+graphene==2.1.7
+gunicorn==19.9.0 # Change from Empty Version in requirements.txt
+itsdangerous==1.1.0
+jinja2==2.10.1
+loguru==0.3.2
+passlib==1.7.1 # Change from Empty Version in requirements.txt
+pydantic==0.32.1 # Change from 0.23
+pyjokes==0.6.0 # Change from 0.5.0
+python-dotenv==0.10.3
+python-multipart==0.0.5
+pyyaml==5.1.2 # Change from 5.1.1
+requests==2.22.0
+silly==1.1.0
+sqlalchemy==1.3.7 # Change from 1.3.6
+ujson==1.35
+uvicorn==0.8.6 # Change from 0.8.4
