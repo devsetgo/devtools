@@ -41,7 +41,6 @@ def write_new_comma_file(updates):
             line = f"pypi, {v['library']}, {v['newVersion']}, false, {v['currentVersion']}"
         else:
             line = f"pypi, {v['library']}, {v['newVersion']}, false"
-        f.write(line + '\n')
 
     return 'done'
 
@@ -108,6 +107,7 @@ def clean_item(items):
             try:
                 currentVersion = pipItem[1]
             except Exception:
+
                 currentVersion = "none"
 
             cleaned_lib = {'library': library
