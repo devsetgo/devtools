@@ -65,3 +65,4 @@ WTForms
 pytest-mock
 python-dotenv
 kafka-python
+pyjwt

@@ -33,6 +33,7 @@ pypi, passlib, 1.7.1, false, none
 pypi, pre-commit, 1.20.0, false, none
 pypi, psutil, 5.6.3, false, none
 pypi, py-cpuinfo, 5.0.0, false, none
+pypi, pyjwt, 1.7.1, false, none
 pypi, pylint, 2.4.3, false, none
 pypi, pymongo, 3.9.0, false, none
 pypi, pytest, 5.2.2, false, none
