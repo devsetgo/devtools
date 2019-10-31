@@ -1,0 +1,12 @@
+fastapi[all]
+databases
+asyncpg
+aiomysql
+aiosqlite
+httpx
+elastic-apm
+cassandra-driver
+cx-Oracle
+pymongo
+Cython
+zeebe-grpc

@@ -15,11 +15,32 @@ def openfile():
 
 def write_new_file(updates):
     f = open('data/new_requirements.txt', 'w+')
-    for i in updates:
-        if i['newVersion'] != i['currentVersion']:
-            line = f"{i['library']}=={i['newVersion']} # Change from {i['currentVersion']}"
+    sorted_list = sorted(updates, key = lambda i: i['library'])
+    # print(sorted_list)
+
+    for v in sorted_list:
+        
+        if v['newVersion'] != v['currentVersion']:
+            line = f"{v['library']}=={v['newVersion']} # Change from {v['currentVersion']}"
         else:
-            line = f"{i['library']}=={i['currentVersion']}"
+            line = f"{v['library']}=={v['currentVersion']}"
+        f.write(line + '\n')
+
+    return 'done'
+
+
+def write_new_comma_file(updates):
+    f = open('data/new_comma_requirements.csv', 'w+')
+    sorted_list = sorted(updates, key = lambda i: i['library'])
+    # print(sorted_list)
+    header = 'source,library,version,maven_bom,original_version'
+    f.write(str(header) + '\n')
+    for v in sorted_list:
+        
+        if v['newVersion'] != v['currentVersion']:
+            line = f"pypi, {v['library']}, {v['newVersion']}, false, {v['currentVersion']}"
+        else:
+            line = f"pypi, {v['library']}, {v['newVersion']}, false"
         f.write(line + '\n')
 
     return 'done'
@@ -33,8 +54,10 @@ def loop_calls(itemList):
         pip_info = {'library': i['library']
                     ,'currentVersion': i['currentVersion']
                     ,'newVersion': resp['newVersion']}
-
+    
+        
         results.append(pip_info)
+
     return results
 
 def call_pypi(url):
@@ -51,37 +74,50 @@ def call_pypi(url):
 def clean_item(items):
     results = []
     for i in items:
-        logicList = ['==','>=','<=','>','<']
-        if '==' in i:
-            new_i = i.replace("==", " ")        
-        elif ">=" in i:
-            new_i = i.replace(">=", " ")
-        elif "<=" in i:
-            new_i = i.replace("<=", " ")
-        elif ">" in i:
-            new_i = i.replace(">", " ")
-        elif "<" in i:
-            new_i = i.replace("<", " ")
-        else:
-            new_i = i
         
-        bracketList =  ['[',']','(',')']
-        cleaned_up_i = re.sub("[\(\[].*?[\)\]]", "", new_i)
-        # print(cleaned_up_i)
-        m = cleaned_up_i
-        pipItem = m.split()
-        # print(pipItem)
-        library = pipItem[0]
-        try:
-            currentVersion = pipItem[1]
-        except Exception:
-            currentVersion = "Empty Version in requirements.txt"
+        comment = i.startswith("#")
+        recur_file = i.startswith("-")
+        empty_line =  False
+        if i:
+            empty_line =  False
 
-        cleaned_lib = {'library': library
-                        ,'currentVersion': currentVersion}
-        # print(cleaned_lib)
+        if len(i.strip()) != 0 and comment == False and recur_file == False and empty_line == False:
+            # print(i)
+            logicList = ['==','>=','<=','>','<']
+            if '==' in i:
+                new_i = i.replace("==", " ")        
+            elif ">=" in i:
+                new_i = i.replace(">=", " ")
+            elif "<=" in i:
+                new_i = i.replace("<=", " ")
+            elif ">" in i:
+                new_i = i.replace(">", " ")
+            elif "<" in i:
+                new_i = i.replace("<", " ")
+            else:
+                new_i = i
+            
+            bracketList =  ['[',']','(',')']
+            cleaned_up_i = re.sub("[\(\[].*?[\)\]]", "", new_i)
+            # print(cleaned_up_i)
+            m = cleaned_up_i
+            pipItem = m.split()
+            # print(pipItem)
 
-        results.append(cleaned_lib)
+            library = pipItem[0]
+            try:
+                currentVersion = pipItem[1]
+            except Exception:
+                currentVersion = "none"
+
+            cleaned_lib = {'library': library
+                            ,'currentVersion': currentVersion}
+            # print(cleaned_lib['library'])
+            lib = cleaned_lib['library']
+            if not any(l['library']==lib for l in results):
+                results.append(cleaned_lib)
+
+
     # print(results)
     return results
 
@@ -91,9 +127,10 @@ def main():
     cleaned_data = clean_item(file_data)
     # print(cleaned_data)
     fulllist = loop_calls(cleaned_data)
-    # print(len(fulllist))
+    # print(fulllist)
     written = write_new_file(fulllist)
     # print (written)
+    written_comma = write_new_comma_file(fulllist)
 
 if __name__ == '__main__':
     main()
