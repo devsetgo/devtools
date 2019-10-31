@@ -44,6 +44,7 @@ pypi, python-multipart, 0.0.5, false, none
 pypi, pyyaml, 5.1.2, false, none
 pypi, requests, 2.22.0, false, none
 pypi, requests-mock, 1.7.0, false, none
+pypi, scrypt, 0.8.13, false, none
 pypi, seaborn, 0.9.0, false, none
 pypi, selenium, 3.141.0, false, none
 pypi, silly, 1.1.0, false, none
