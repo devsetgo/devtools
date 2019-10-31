@@ -1,39 +1,67 @@
-fastapi==0.33.0 # Change from 0.16.0
-# comment
--r x.txt
-uvicorn==0.8.4 # Change from Empty Version in requirements.txt
-silly==1.1.0
-pyjokes==0.5.0
-databases==0.2.5 # Change from 0.2.2
-aiosqlite==0.10.0 # Change from Empty Version in requirements.txt
-asyncpg==0.18.3 # Change from Empty Version in requirements.txt
-alembic==1.0.11 # Change from 1.0.8
-loguru==0.3.2 # Change from 0.2.5
-python-dotenv==0.10.3 # Change from 0.10.1
-sqlalchemy==1.3.6 # Change from 1.3.3
-ujson==1.35 # Change from Empty Version in requirements.txt
-email_validator==1.0.4 # Change from Empty Version in requirements.txt
-requests==2.22.0 # Change from Empty Version in requirements.txt
-aiofiles==0.4.0 # Change from Empty Version in requirements.txt
-jinja2==2.10.1 # Change from Empty Version in requirements.txt
-python-multipart==0.0.5 # Change from Empty Version in requirements.txt
-itsdangerous==1.1.0 # Change from Empty Version in requirements.txt
-pyyaml==5.1.1 # Change from Empty Version in requirements.txt
-graphene==2.1.7 # Change from Empty Version in requirements.txt
-PyJWT==1.7.1 # Change from Empty Version in requirements.txt
-passlib[bycrypt]
-gunicorn
-click==7.0
-attrs>=18.1.0
-fastapi==0.16.0
-pydantic==0.23
-uvicorn
-silly==1.1.0
-pyjokes==0.5.0
-databases==0.2.2
-aiosqlite
+fastapi
+ujson
+email_validator
+aiofiles 
+jinja2
+python-multipart
+itsdangerous 
+pyyaml
+graphene
+databases
 asyncpg
-alembic==1.0.8
-loguru==0.2.5
-python-dotenv==0.10.1
-sqlalchemy==1.3
+aiomysql
+aiosqlite
+httpx
+elastic-apm
+elasticsearch-dsl
+cassandra-driver
+cx-Oracle
+pymongo
+Cython
+zeebe-grpc
+autopep8
+black
+coverage
+coverage-badge
+flake8
+pre-commit
+pylint
+pytest
+pytest-cov
+requests-mock
+aiofiles
+aiosqlite
+alembic
+asyncpg
+databases
+gunicorn
+jinja2
+requests
+starlette
+starlette-auth-toolkit
+uvicorn
+aiosqlite
+alembic
+gunicorn
+loguru
+passlib
+bcrypt
+psutil
+py-cpuinfo
+silly
+sqlalchemy
+textblob
+xmltodict
+tqdm
+starlette
+openpyxl 
+textblob
+tensorflow
+aiohttp
+dask
+selenium
+seaborn
+WTForms
+pytest-mock
+python-dotenv
+kafka-python

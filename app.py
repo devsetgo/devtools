@@ -29,6 +29,22 @@ def write_new_file(updates):
     return 'done'
 
 
+def write_new_comma_file(updates):
+    f = open('data/new_comma_requirements.csv', 'w+')
+    sorted_list = sorted(updates, key = lambda i: i['library'])
+    # print(sorted_list)
+    header = 'source,library,version,maven_bom,original_version'
+    f.write(str(header) + '\n')
+    for v in sorted_list:
+        
+        if v['newVersion'] != v['currentVersion']:
+            line = f"pypi, {v['library']}, {v['newVersion']}, false, {v['currentVersion']}"
+        else:
+            line = f"pypi, {v['library']}, {v['newVersion']}, false"
+
+    return 'done'
+
+
 def loop_calls(itemList):
     results = []
     for i in tqdm(itemList,desc='PyPi calls', total=len(itemList),ascii=True,unit=' pypiCall'):
@@ -82,7 +98,7 @@ def clean_item(items):
             
             bracketList =  ['[',']','(',')']
             cleaned_up_i = re.sub("[\(\[].*?[\)\]]", "", new_i)
-            print(cleaned_up_i)
+            # print(cleaned_up_i)
             m = cleaned_up_i
             pipItem = m.split()
             # print(pipItem)
@@ -91,7 +107,8 @@ def clean_item(items):
             try:
                 currentVersion = pipItem[1]
             except Exception:
-                currentVersion = "Empty Version in requirements.txt"
+
+                currentVersion = "none"
 
             cleaned_lib = {'library': library
                             ,'currentVersion': currentVersion}
@@ -113,6 +130,7 @@ def main():
     # print(fulllist)
     written = write_new_file(fulllist)
     # print (written)
+    written_comma = write_new_comma_file(fulllist)
 
 if __name__ == '__main__':
     main()
