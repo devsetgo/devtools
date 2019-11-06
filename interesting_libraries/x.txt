@@ -55,6 +55,6 @@ starlette==0.12.9
 ujson==1.35
 urllib3==1.25.6
 uvicorn==0.10.3
-uvloop==0.13.0
+uvloop==0.14.0
 websockets==8.0.2
 zeebe-grpc==0.21.1.1
