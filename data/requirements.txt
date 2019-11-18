@@ -52,7 +52,7 @@ starlette==0.12.10 # Change from none
 starlette-auth-toolkit==0.5.0 # Change from none
 tensorflow==2.0.0 # Change from none
 textblob==0.15.3 # Change from none
-tqdm==4.37.0 # Change from none
+tqdm==4.38.0 # Change from none
 ujson==1.35 # Change from none
 uvicorn==0.10.3 # Change from none
 xmltodict==0.12.0 # Change from none
