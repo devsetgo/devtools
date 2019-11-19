@@ -15,7 +15,7 @@ coverage-badge==1.0.1
 cx-Oracle==7.2.3
 dask==2.6.0
 databases==0.2.6
-elastic-apm==5.2.2
+elastic-apm==5.3.1
 elasticsearch-dsl==7.1.0
 email_validator==1.0.5
 fastapi==0.42.0
