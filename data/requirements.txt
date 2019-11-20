@@ -22,7 +22,7 @@ fastapi==0.42.0 # Change from none
 flake8==3.7.9 # Change from none
 graphene==2.1.8 # Change from none
 gunicorn==19.9.0 # Change from none
-httpx==0.7.5 # Change from none
+httpx==0.7.8 # Change from none
 itsdangerous==1.1.0 # Change from none
 jinja2==2.10.3 # Change from none
 kafka-python==1.4.7 # Change from none
