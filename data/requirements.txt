@@ -35,7 +35,7 @@ py-cpuinfo==5.0.0 # Change from none
 pyjwt==1.7.1 # Change from none
 pylint==2.4.3 # Change from none
 pymongo==3.9.0 # Change from none
-pytest==5.2.2 # Change from none
+pytest==5.3.0 # Change from none
 pytest-cov==2.8.1 # Change from none
 pytest-mock==1.11.2 # Change from none
 python-dotenv==0.10.3 # Change from none
