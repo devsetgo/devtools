@@ -52,7 +52,7 @@ starlette==0.12.12 # Change from 0.12.10
 starlette-auth-toolkit==0.5.0
 tensorflow==2.0.0
 textblob==0.15.3
-tqdm==4.37.0
+tqdm==4.39.0
 ujson==1.35
 uvicorn==0.10.3
 xmltodict==0.12.0
