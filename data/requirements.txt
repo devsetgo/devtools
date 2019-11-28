@@ -18,7 +18,7 @@ databases==0.2.6 # Change from none
 elastic-apm==5.3.2 # Change from none
 elasticsearch-dsl==7.1.0 # Change from none
 email_validator==1.0.5 # Change from none
-fastapi==0.42.0 # Change from none
+fastapi==0.44.0 # Change from none
 flake8==3.7.9 # Change from none
 graphene==2.1.8 # Change from none
 gunicorn==19.9.0 # Change from none
