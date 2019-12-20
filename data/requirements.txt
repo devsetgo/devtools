@@ -54,6 +54,6 @@ tensorflow==2.0.0 # Change from none
 textblob==0.15.3 # Change from none
 tqdm==4.39.0 # Change from none
 ujson==1.35 # Change from none
-uvicorn==0.10.8 # Change from none
+uvicorn==0.10.9 # Change from none
 xmltodict==0.12.0 # Change from none
 zeebe-grpc==0.21.1.1 # Change from none
