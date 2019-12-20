@@ -6,7 +6,7 @@ aniso8601==8.0.0
 async-exit-stack==1.0.1
 async-generator==1.10
 asyncpg==0.20.0
-cassandra-driver==3.19.0
+cassandra-driver==3.20.2
 certifi==2019.9.11
 cffi==1.13.1
 chardet==3.0.4
@@ -20,7 +20,7 @@ dataclasses==0.7
 dnspython==1.16.0
 elastic-apm==5.3.2
 email-validator==1.0.5
-fastapi==0.42.0
+fastapi==0.45.0
 graphene==2.1.8
 graphql-core==2.2.1
 graphql-relay==2.0.0
@@ -28,7 +28,7 @@ grpcio==1.24.1
 h11==0.9.0
 h2==3.1.1
 hpack==3.0.0
-hstspreload==2019.10.31
+hstspreload==2019.12.9
 httptools==0.0.13
 httpx==0.7.8
 hyperframe==5.2.0
@@ -39,9 +39,9 @@ Jinja2==2.10.3
 MarkupSafe==1.1.1
 pkg-resources==0.0.0
 promise==2.2.1
-protobuf==3.10.0
+protobuf==3.11.1
 pycparser==2.19
-pydantic==1.0
+pydantic==1.2
 pymongo==3.9.0
 PyMySQL==0.9.3
 python-multipart==0.0.5
