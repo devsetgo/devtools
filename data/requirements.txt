@@ -10,7 +10,7 @@ autopep8==1.4.4 # Change from none
 bcrypt==3.1.7 # Change from none
 black==19.10b0 # Change from none
 cassandra-driver==3.20.2 # Change from none
-coverage==4.5.4 # Change from none
+coverage==5.0.1 # Change from none
 coverage-badge==1.0.1 # Change from none
 cx-Oracle==7.2.3 # Change from none
 dask==2.8.1 # Change from none
