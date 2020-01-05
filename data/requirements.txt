@@ -12,7 +12,7 @@ black==19.10b0 # Change from none
 cassandra-driver==3.20.2 # Change from none
 coverage==5.0.1 # Change from none
 coverage-badge==1.0.1 # Change from none
-cx-Oracle==7.2.3 # Change from none
+cx-Oracle==7.3.0 # Change from none
 dask==2.9.1 # Change from none
 databases==0.2.6 # Change from none
 elastic-apm==5.3.2 # Change from none
