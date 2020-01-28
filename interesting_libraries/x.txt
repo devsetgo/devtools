@@ -42,7 +42,7 @@ promise==2.3
 protobuf==3.11.2
 pycparser==2.19
 pydantic==1.4
-pymongo==3.10.0
+pymongo==3.10.1
 PyMySQL==0.9.3
 python-multipart==0.0.5
 PyYAML==5.3

@@ -34,7 +34,7 @@ psutil==5.6.7 # Change from none
 py-cpuinfo==5.0.0 # Change from none
 pyjwt==1.7.1 # Change from none
 pylint==2.4.4 # Change from none
-pymongo==3.10.0 # Change from none
+pymongo==3.10.1 # Change from none
 pytest==5.3.2 # Change from none
 pytest-cov==2.8.1 # Change from none
 pytest-mock==2.0.0 # Change from none
