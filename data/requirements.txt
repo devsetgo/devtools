@@ -44,7 +44,7 @@ pyyaml==5.3 # Change from none
 requests==2.22.0 # Change from none
 requests-mock==1.7.0 # Change from none
 scrypt==0.8.13 # Change from none
-seaborn==0.9.0 # Change from none
+seaborn==0.10.0 # Change from none
 selenium==3.141.0 # Change from none
 silly==1.1.0 # Change from none
 sqlalchemy==1.3.12 # Change from none
