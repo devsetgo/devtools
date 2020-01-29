@@ -56,4 +56,4 @@ tqdm==4.41.1
 ujson==1.35
 uvicorn==0.11.1
 xmltodict==0.12.0
-zeebe-grpc==0.21.1.1
+zeebe-grpc==0.22.1.0
