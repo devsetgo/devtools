@@ -6,7 +6,7 @@ aniso8601==8.0.0
 async-exit-stack==1.0.1
 async-generator==1.10
 asyncpg==0.20.1
-cassandra-driver==3.20.2
+cassandra-driver==3.21.0
 certifi==2019.11.28
 cffi==1.13.1
 chardet==3.0.4
