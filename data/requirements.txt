@@ -4,7 +4,7 @@ aiofiles==0.4.0 # Change from none
 aiohttp==3.6.2 # Change from none
 aiomysql==0.0.20 # Change from none
 aiosqlite==0.11.0 # Change from none
-alembic==1.3.2 # Change from none
+alembic==1.3.3 # Change from none
 asyncpg==0.20.1 # Change from none
 autopep8==1.4.4 # Change from none
 bcrypt==3.1.7 # Change from none
