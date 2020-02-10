@@ -8,7 +8,7 @@ async-generator==1.10
 asyncpg==0.20.1
 cassandra-driver==3.21.0
 certifi==2019.11.28
-cffi==1.13.1
+cffi==1.14.0
 chardet==3.0.4
 Click==7.0
 contextvars==2.4
