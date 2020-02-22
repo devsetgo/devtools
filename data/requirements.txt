@@ -1,4 +1,4 @@
-Cython==0.29.13 # Change from none
+Cython==0.29.15 # Change from none
 WTForms==2.2.1 # Change from none
 aiofiles==0.4.0 # Change from none
 aiohttp==3.6.2 # Change from none
