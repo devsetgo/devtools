@@ -41,7 +41,7 @@ pytest-mock==2.0.0 # Change from none
 python-dotenv==0.11.0 # Change from none
 python-multipart==0.0.5 # Change from none
 pyyaml==5.3 # Change from none
-requests==2.22.0 # Change from none
+requests==2.23.0 # Change from none
 requests-mock==1.7.0 # Change from none
 scrypt==0.8.13 # Change from none
 seaborn==0.10.0 # Change from none
