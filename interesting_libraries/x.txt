@@ -32,7 +32,7 @@ hstspreload==2020.2.21
 httptools==0.1.1
 httpx==0.11.1
 hyperframe==5.2.0
-idna==2.8
+idna==2.9
 immutables==0.11
 itsdangerous==1.1.0
 Jinja2==2.11.1
