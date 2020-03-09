@@ -53,7 +53,7 @@ starlette-auth-toolkit==0.5.0
 tensorflow==2.1.0
 textblob==0.15.3
 tqdm==4.43.0
-ujson==1.35
+ujson==2.0.1
 uvicorn==0.11.3
 xmltodict==0.12.0
 zeebe-grpc==0.22.1.0
