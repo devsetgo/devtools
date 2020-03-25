@@ -14,7 +14,7 @@ Click==7.1.1
 contextvars==2.4
 cryptography==2.8
 cx-Oracle==7.3.0
-Cython==0.29.15
+Cython==0.29.16
 databases==0.2.6
 dataclasses==0.7
 dnspython==1.16.0
