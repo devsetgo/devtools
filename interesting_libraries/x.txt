@@ -18,7 +18,7 @@ Cython==0.29.15
 databases==0.2.6
 dataclasses==0.7
 dnspython==1.16.0
-elastic-apm==5.5.1
+elastic-apm==5.5.2
 email-validator==1.0.5
 fastapi==0.52.0
 graphene==2.1.8
