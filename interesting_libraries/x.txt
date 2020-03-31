@@ -20,7 +20,7 @@ dataclasses==0.7
 dnspython==1.16.0
 elastic-apm==5.5.2
 email-validator==1.0.5
-fastapi==0.53.1
+fastapi==0.53.2
 graphene==2.1.8
 graphql-core==3.0.3
 graphql-relay==3.0.0
