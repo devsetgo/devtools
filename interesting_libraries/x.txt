@@ -22,7 +22,7 @@ elastic-apm==5.5.2
 email-validator==1.0.5
 fastapi==0.54.0
 graphene==2.1.8
-graphql-core==3.0.3
+graphql-core==3.1.0
 graphql-relay==3.0.0
 grpcio==1.28.1
 h11==0.9.0
