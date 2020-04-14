@@ -35,7 +35,7 @@ hyperframe==5.2.0
 idna==2.9
 immutables==0.11
 itsdangerous==1.1.0
-Jinja2==2.11.1
+Jinja2==2.11.2
 MarkupSafe==1.1.1
 pkg-resources==0.0.0
 promise==2.3
