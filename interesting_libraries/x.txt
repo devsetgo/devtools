@@ -57,4 +57,4 @@ urllib3==1.25.8
 uvicorn==0.11.3
 uvloop==0.14.0
 websockets==8.0.2
-zeebe-grpc==0.22.2.0
+zeebe-grpc==0.23.0.0
