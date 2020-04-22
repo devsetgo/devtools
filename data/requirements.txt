@@ -1,5 +1,5 @@
 Cython==0.29.16 # Change from none
-WTForms==2.2.1 # Change from none
+WTForms==2.3.0 # Change from none
 aiofiles==0.5.0 # Change from none
 aiohttp==3.6.2 # Change from none
 aiomysql==0.0.20 # Change from none
