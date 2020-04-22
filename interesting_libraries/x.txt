@@ -15,7 +15,7 @@ contextvars==2.4
 cryptography==2.9
 cx-Oracle==7.3.0
 Cython==0.29.16
-databases==0.2.6
+databases==0.3.0
 dataclasses==0.7
 dnspython==1.16.0
 elastic-apm==5.5.2
