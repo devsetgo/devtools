@@ -28,7 +28,7 @@ grpcio==1.28.1
 h11==0.9.0
 h2==3.2.0
 hpack==3.0.0
-hstspreload==2020.4.21
+hstspreload==2020.4.23
 httptools==0.1.1
 httpx==0.12.1
 hyperframe==5.2.0
