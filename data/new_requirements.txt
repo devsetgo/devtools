@@ -17,7 +17,7 @@ dask==2.15.0
 databases==0.3.1
 elastic-apm==5.5.2
 elasticsearch-dsl==7.1.0
-email_validator==1.0.5
+email_validator==1.1.0
 fastapi==0.54.1
 flake8==3.7.9
 graphene==2.1.8
