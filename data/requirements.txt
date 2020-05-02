@@ -14,7 +14,7 @@ coverage==5.1 # Change from none
 coverage-badge==1.0.1 # Change from none
 cx-Oracle==7.3.0 # Change from none
 dask==2.15.0 # Change from none
-databases==0.3.1 # Change from none
+databases==0.3.2 # Change from none
 elastic-apm==5.5.2 # Change from none
 elasticsearch-dsl==7.1.0 # Change from none
 email_validator==1.1.0 # Change from none
