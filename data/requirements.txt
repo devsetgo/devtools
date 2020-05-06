@@ -56,4 +56,4 @@ tqdm==4.46.0 # Change from none
 ujson==2.0.3 # Change from none
 uvicorn==0.11.5 # Change from none
 xmltodict==0.12.0 # Change from none
-zeebe-grpc==0.23.0.0 # Change from none
+zeebe-grpc==0.23.1.0 # Change from none
