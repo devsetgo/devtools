@@ -19,7 +19,7 @@ elastic-apm==5.6.0 # Change from none
 elasticsearch-dsl==7.2.0 # Change from none
 email_validator==1.1.0 # Change from none
 fastapi==0.54.1 # Change from none
-flake8==3.7.9 # Change from none
+flake8==3.8.1 # Change from none
 graphene==2.1.8 # Change from none
 gunicorn==20.0.4 # Change from none
 httpx==0.12.1 # Change from none
