@@ -17,7 +17,7 @@ dask==2.16.0 # Change from none
 databases==0.3.2 # Change from none
 elastic-apm==5.6.0 # Change from none
 elasticsearch-dsl==7.2.0 # Change from none
-email_validator==1.1.0 # Change from none
+email_validator==1.1.1 # Change from none
 fastapi==0.54.2 # Change from none
 flake8==3.8.1 # Change from none
 graphene==2.1.8 # Change from none
