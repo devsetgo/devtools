@@ -43,7 +43,7 @@ python-multipart==0.0.5 # Change from none
 pyyaml==5.3.1 # Change from none
 requests==2.23.0 # Change from none
 requests-mock==1.8.0 # Change from none
-scrypt==0.8.14 # Change from none
+scrypt==0.8.15 # Change from none
 seaborn==0.10.1 # Change from none
 selenium==3.141.0 # Change from none
 silly==1.1.0 # Change from none
