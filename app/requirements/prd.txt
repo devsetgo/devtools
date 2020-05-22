@@ -1,0 +1,6 @@
+starlette[full]==0.13.4
+httpx==0.12.1
+loguru==0.5.0
+starlette-wtf==0.2.2
+databases[postgresql]==0.3.2
+aiosqlite==0.12.0

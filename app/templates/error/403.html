@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block page_title %}| 403 Page not found{% endblock %}
+{% block page_stylesheet %}{% endblock %}
+{% block page_breadcrumb %} 403 Page not found{% endblock %}
+{% block page_head_title %}403 Page Page{% endblock %}
+{% block body %}
+<!-- Main content -->
+<section class="content">
+  <div class="error-page">
+    <h2 class="headline text-warning"> 403</h2>
+
+    <div class="error-content">
+      <h3><i class="fas fa-exclamation-triangle text-warning"></i> Access denied</h3>
+
+      <p>
+        Full authentication is required to access this resource.
+        Meanwhile, you may <a href="/">return to dashboard</a> or ensure you have proper access rights.
+      </p>
+
+      <form class="search-form">
+        <div class="input-group">
+          <input type="text" name="search" class="form-control" placeholder="Search">
+
+          <div class="input-group-append">
+            <button type="submit" name="submit" class="btn btn-warning"><i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <!-- /.input-group -->
+      </form>
+    </div>
+    <!-- /.error-content -->
+  </div>
+  <!-- /.error-page -->
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}
+
+{% block page_sidebar_content %}
+<!-- blank and demo script adds page configuration example -->
+<!-- <div class="p-3">
+  <h5>Title</h5>
+  <p>Sidebar content</p>
+</div> -->
+{% endblock %}
+{% block page_scripts %}
+<!-- page scripts-->
+
+<!-- Bootstrap 4 -->
+
+<!-- AdminLTE App -->
+<script src="{{ url_for('static' , path='dist/js/adminlte.min.js') }}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ url_for('static' , path='dist/js/demo.js') }}"></script>
+{% endblock %}
