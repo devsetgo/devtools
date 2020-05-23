@@ -10,16 +10,17 @@ from starlette_wtf import CSRFProtectMiddleware
 
 import resources
 import settings
-from app_functions import exceptions
-from endpoints.admin import endpoints as admin_pages
+from com_lib import exceptions
 from endpoints.health import endpoints as health_pages
 from endpoints.main import endpoints as main_pages
 from resources import init_app
 
 routes = [
-    Route("/", main_pages.homepage, name="dashboard", methods=["GET", "POST"]),
+    Route("/", main_pages.index, name="dashboard", methods=["GET", "POST"]),
     Route("/about", main_pages.about_page, methods=["GET"]),
     Route("/health", endpoint=health_pages.health_status, methods=["GET"]),
+    Route("/pypi", main_pages.index, name="dashboard", methods=["GET", "POST"]),
+    Route("/pypi/results/{page}", main_pages.index, name="dashboard", methods=["GET", "POST"]),
     Mount("/static", app=StaticFiles(directory="statics"), name="static"),
 ]
 

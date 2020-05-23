@@ -3,8 +3,8 @@ from loguru import logger
 from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 
-from app_functions import db_setup
-from app_functions.db_setup import create_db
+from com_lib import db_setup
+from com_lib.db_setup import create_db
 from com_lib.logging_config import config_logging
 
 # templates and static files

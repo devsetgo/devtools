@@ -6,6 +6,7 @@ from starlette.responses import RedirectResponse
 from endpoints.bots import crud as bot_crud
 from resources import templates
 
+base: str =
 
 async def pypi_page(request):
 
