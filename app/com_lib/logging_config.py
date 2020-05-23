@@ -10,6 +10,7 @@ from settings import LOGURU_ROTATION
 
 
 def config_logging():
+
     log_path = Path.cwd().joinpath("log").joinpath("app_log.log")
     logger.add(
         log_path,
@@ -20,7 +21,7 @@ def config_logging():
         retention=LOGURU_RETENTION,
         level=LOGURU_LOGGING_LEVEL,
         compression="zip",
-        serialize=True,
+        serialize=False,
     )
 
     class InterceptHandler(logging.Handler):

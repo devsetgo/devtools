@@ -38,8 +38,9 @@ async def about_page(request):
     logger.info(f"page accessed: /{template}")
     return templates.TemplateResponse(template, context)
 
+
 async def index(request):
     template = f"index3.html"
     context = {"request": request}
     logger.info(f"page accessed: /{template}")
-    return templates.TemplateResponse(template, context) 
+    return templates.TemplateResponse(template, context)

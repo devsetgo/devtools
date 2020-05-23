@@ -6,7 +6,7 @@ database simple functions. Pass query and where needed values and get result bac
 from loguru import logger
 from sqlalchemy.sql import text
 
-from app_functions.db_setup import database
+from com_lib.db_setup import database
 
 
 async def fetch_one_db(query):
@@ -35,8 +35,3 @@ async def execute_many_db(query, values: dict):
     result = await database.execute_many(query, values)
     logger.debug(str(result))
     return result
-
-
-async def drop_apscheduler_table():
-    table_drop = text("DROP TABLE apscheduler_jobs")
-    await database.execute(query=table_drop)

@@ -32,12 +32,28 @@ async def disconnect_db():
     logger.info("disconnecting from database")
 
 
+# {'library': i['library']
+#                     ,'currentVersion': i['currentVersion']
+#                     ,'newVersion': resp['newVersion']}
 libraries = sqlalchemy.Table(
     "libraries",
     metadata,
     sqlalchemy.Column("id", sqlalchemy.String, primary_key=True),
+    sqlalchemy.Column("request_group_id", sqlalchemy.String, index=True),
     sqlalchemy.Column("library", sqlalchemy.String, index=True),
-    sqlalchemy.Column("version", sqlalchemy.String, index=True),
-    sqlalchemy.Column("host", sqlalchemy.String, index=True),
+    sqlalchemy.Column("currentVersion", sqlalchemy.String, index=True),
+    sqlalchemy.Column("newVersion", sqlalchemy.String, index=True),
+    sqlalchemy.Column("dated_created", sqlalchemy.DateTime, index=True),
+)
+
+requirements = sqlalchemy.Table(
+    "requirements",
+    metadata,
+    sqlalchemy.Column("id", sqlalchemy.String, primary_key=True),
+    sqlalchemy.Column("request_group_id", sqlalchemy.String,unique=True, index=True),
+    sqlalchemy.Column("text_in", sqlalchemy.String, index=True),
+    sqlalchemy.Column("json_data_in", sqlalchemy.JSON, index=True),
+    sqlalchemy.Column("json_data_out", sqlalchemy.JSON, index=True),
+    sqlalchemy.Column("host_ip", sqlalchemy.String, index=True),
     sqlalchemy.Column("dated_created", sqlalchemy.DateTime, index=True),
 )

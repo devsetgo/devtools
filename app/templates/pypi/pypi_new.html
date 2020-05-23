@@ -19,106 +19,35 @@
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form action="/bots/new-bot" method="post" enctype="multipart/form-data">
+          <form action="/pypi/" method="post" enctype="multipart/form-data">
             {{ form.csrf_token }}
             <div class="row">
 
               <div class="col-5">
                 <br>
-                <div class="input-group mb-3">
-                  {{ form.twitter_name(placeholder='Twitter Name') }}
-                  <div class="input-group-append">
+                <div class="input-group mb-5">
+                  {{ form.requirements(placeholder='Paste Requirements.txt here',rows='10',cols='80') }}
+                  <!-- <div class="input-group-append">
                     <div class="input-group-text">
                       <span class="fab fa-twitter"></span>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
-                <div class="input-group mb-3">
-                  {{ form.consumer_key(placeholder='Consumer Key') }}
-
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span class="fas fa-key"></span>
-                    </div>
-                  </div>
+                <div class="input-group mb-5">
+                  <br>
+                  <button type="submit" class="btn btn-primary btn-block" title="Create Bot in deactivated mode">Check For Updates</button>
+                  <br>
                 </div>
-                <div class="input-group mb-3">
-                  {{ form.access_token(placeholder='Access Token') }}
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span class="fas fa-coins"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-5">
-                <br>
-                <div class="input-group mb-2">
-
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span class="fas fa-images"> </span>
-                    </div>
-                  </div>
-                  {{ form.bot_image(placeholder='Bot Image File') }}
-                </div>
-
-                <div class="input-group mb-3">
-                  {{ form.consumer_secret(placeholder='Consumer Secret') }}
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span class="fas fa-user-secret"></span>
-                    </div>
-                  </div>
-                </div>
-                <div class="input-group mb-3">
-                  {{ form.access_token_secret(placeholder='Access Token Secret') }}
-
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span class="fas fa-mask"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="row">
-              <div class="col-8 align-content-center">
-                <div class="input-group mb-4">
-                  {{ form.description(placeholder='Twitter Account Descriptions',rows='5',cols='40') }}
-
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                      <span class="fas fa-book-open"></span>
-                    </div>
-                  </div>
-                </div>
-
               </div>
             </div>
             <!-- /.col -->
-
-            <div class="row">
-
-              <div class="col-8">
-                <div class="col-4 align-content-center">
-                  <br>
-                  <button type="submit" class="btn btn-primary btn-block" title="Create Bot in deactivated mode">Create
-                    Bot</button>
-                  <br>
-                </div>
-                <!-- /.col -->
-              </div>
-            </div>
         </div>
         </form>
       </div>
       <!-- /.card -->
 
     </div>
-  <!-- /.row -->
+    <!-- /.row -->
   </div>
   <!-- /.container-fluid -->
 </section>
