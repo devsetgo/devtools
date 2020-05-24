@@ -33,8 +33,8 @@ from resources import templates
 
 async def about_page(request):
 
-    template = f"about.html"
-    context = {"request": request}
+    template: str = f"about.html"
+    context: dict = {"request": request}
     logger.info(f"page accessed: /{template}")
     return templates.TemplateResponse(template, context)
 
@@ -44,7 +44,7 @@ async def index(request):
     unique_lib = await lib_crud.get_data()
 
     logger.critical(f"unique libraries {unique_lib}")
-    template = f"index3.html"
-    context = {"request": request}
+    template: str = f"index3.html"
+    context: dict = {"request": request}
     logger.critical(f"page accessed: /{template}")
     return templates.TemplateResponse(template, context)
