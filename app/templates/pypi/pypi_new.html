@@ -3,8 +3,8 @@
 {% block page_stylesheet %}
 <link rel="stylesheet" href="{{ url_for('static' , path='plugins/toastr/toastr.min.css') }}">
 {% endblock %}
-{% block page_breadcrumb %} Create New Bot{% endblock %}
-{% block page_head_title %}Create New Bot{% endblock %}
+{% block page_breadcrumb %} Pypi Check{% endblock %}
+{% block page_head_title %}Pypi Check{% endblock %}
 {% block body %}
 <!-- Main content -->
 <section class="content">
@@ -15,15 +15,17 @@
         <!-- general form elements -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">New Bot</h3>
+            <h3 class="card-title">Pypi Update</h3>
           </div>
           <!-- /.card-header -->
-          <!-- form start -->
-          <form action="/pypi/" method="post" enctype="multipart/form-data">
-            {{ form.csrf_token }}
-            <div class="row">
 
-              <div class="col-5">
+          <!-- form start -->
+
+          <div class="row">
+
+            <div class="col-5">
+              <form action="/pypi/" method="post" enctype="multipart/form-data">
+                {{ form.csrf_token }}
                 <br>
                 <div class="input-group mb-5">
                   {{ form.requirements(placeholder='Paste Requirements.txt here',rows='10',cols='80') }}
@@ -35,15 +37,29 @@
                 </div>
                 <div class="input-group mb-5">
                   <br>
-                  <button type="submit" class="btn btn-primary btn-block" title="Create Bot in deactivated mode">Check For Updates</button>
+                  <button type="submit" class="btn btn-primary btn-block" title="Create Bot in deactivated mode">Check
+                    For Updates</button>
                   <br>
+
+                </div>
+              </form>
+            </div>
+            <div class="col-5">
+              <p></p>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                aria-valuemin="0" aria-valuemax="100" style="width:10%">
+                  70%
                 </div>
               </div>
             </div>
-            <!-- /.col -->
+          </div>
+
+          <!-- /.col -->
         </div>
-        </form>
+
       </div>
+
       <!-- /.card -->
 
     </div>

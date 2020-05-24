@@ -5,7 +5,7 @@ from starlette.templating import Jinja2Templates
 
 from com_lib import db_setup
 from com_lib.db_setup import create_db
-from com_lib.logging_config import config_logging
+from com_lib.logging_config import config_log
 
 # templates and static files
 templates = Jinja2Templates(directory="templates")
@@ -14,7 +14,7 @@ statics = StaticFiles(directory="statics")
 
 def init_app():
 
-    config_logging()
+    config_log()
     logger.info("Initiating application")
     create_db()
     logger.info("Initiating database")

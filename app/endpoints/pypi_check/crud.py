@@ -5,37 +5,29 @@ from datetime import datetime
 from starlette.background import BackgroundTask
 from loguru import logger
 
+
 async def store_in_data(store_values: dict):
 
-
     query = requirements.insert()
-    # values = {
-    #     "id": str(uuid.uuid4()),
-    #     "request_group_id": str(request_group_id),
-    #     "text_in": text_in,
-    #     "json_data_in": json_data_in,
-    #     "json_data_out": json_data_out,
-    #     "host_ip": host_ip,
-    #     "dated_created": datetime.now(),
-    # }
     await crud_ops.execute_one_db(query=query, values=store_values)
+    rgi = store_values["request_group_id"]
+    logger.info("Created {rgi}")
     # return request_group_id
 
 
-# async def store_processed_data(
-#     request_group_id: str, json_data_in: dict, json_data_out: dict
-# ):
+async def store_lib_request(json_data: dict, request_group_id: str):
 
-
-#     query = requirements.update().where(requirements.c.request_group_id == request_group_id)
-#     values = {
-#         "id": str(uuid.uuid4()),
-#         "request_group_id": str(request_group_id),
-#         "json_data_in": json_data_in,
-#         "json_data_out": json_data_out,
-#     }
-#     await crud_ops.execute_one_db(query=query, values=values)
-#     return request_group_id
+    query = libraries.insert()
+    values = {
+        "id": str(uuid.uuid4()),
+        "request_group_id": request_group_id,
+        "library": json_data["library"],
+        "currentVersion": json_data["currentVersion"],
+        "newVersion": json_data["newVersion"],
+        "dated_created": datetime.now(),
+    }
+    await crud_ops.execute_one_db(query=query, values=values)
+    logger.info(f"created request_group_id: {request_group_id}")
 
 
 async def store_lib_data(request_group_id: str, json_data: dict):
@@ -55,11 +47,16 @@ async def store_lib_data(request_group_id: str, json_data: dict):
     query = libraries.insert()
     values = bulk_data
     await crud_ops.execute_many_db(query=query, values=values)
+    logger.info(f"created request_group_id: {request_group_id}")
     return request_group_id
 
-async def get_request_group_id(request_group_id:str):
 
-    query = requirements.select().where(requirements.c.request_group_id==request_group_id)
+async def get_request_group_id(request_group_id: str):
+
+    query = requirements.select().where(
+        requirements.c.request_group_id == request_group_id
+    )
     result = await crud_ops.fetch_one_db(query=query)
-    logger.critical(str(result))
+    logger.debug(str(result))
+    logger.info(f"returning results for {request_group_id}")
     return result

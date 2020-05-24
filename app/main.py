@@ -16,6 +16,7 @@ from endpoints.main import endpoints as main_pages
 from endpoints.pypi_check import endpoints as pypi_pages
 from resources import init_app
 
+
 routes = [
     Route("/", main_pages.index, name="dashboard", methods=["GET", "POST"]),
     Route("/about", main_pages.about_page, methods=["GET"]),
@@ -41,6 +42,7 @@ exception_handlers = {
     404: exceptions.not_found,
     500: exceptions.server_error,
 }
+
 
 init_app()
 
