@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from com_lib import crud_ops
 from com_lib.db_setup import requirements, libraries
 import uuid
@@ -11,7 +12,7 @@ async def store_in_data(store_values: dict):
     query = requirements.insert()
     await crud_ops.execute_one_db(query=query, values=store_values)
     rgi = store_values["request_group_id"]
-    logger.info("Created {rgi}")
+    logger.info(f"Created {rgi}")
     # return request_group_id
 
 

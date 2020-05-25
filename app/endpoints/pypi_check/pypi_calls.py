@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # from pathlib import Path
 from tqdm import tqdm
 import asyncio
@@ -12,7 +13,7 @@ import httpx
 import uuid
 from endpoints.pypi_check.crud import store_in_data, store_lib_request
 from tqdm import tqdm_gui
-
+import re
 
 async def loop_calls_adv(itemList: list, request_group_id: str):
     results = []
@@ -45,7 +46,7 @@ async def call_pypi_adv(url):
         result = {"newVersion": "not found"}
     else:
         resp = r.json()
-        logger.info(resp)
+        # logger.debug(resp)
         result = {"newVersion": resp["info"]["version"]}
     return result
 
@@ -71,7 +72,7 @@ def pattern_between_two_char(text_string: str) -> list:
 
 def clean_item(items: list):
 
-    results = []
+    results: list = []
     for i in items:
 
         comment = i.startswith("#")
@@ -143,12 +144,14 @@ async def process_raw(raw_data: str):
     logger.debug(raw_data)
 
     new_req: list = []
+    pattern = "^[a-zA-Z]"
     for r in req_list:
-        if len(r) != 0:
+        if re.match(r"^[a-zA-Z]", r):
             new_req.append(r)
-            logger.info(r)
-
-    return req_list
+            logger.info(f"library: {r}")
+        else:
+            pass
+    return new_req
 
 
 async def main(raw_data: str, host_ip: str):
@@ -156,11 +159,11 @@ async def main(raw_data: str, host_ip: str):
     # store incoming data
 
     # process raw data
-    req_list = await process_raw(raw_data=raw_data)
+    req_list: list = await process_raw(raw_data=raw_data)
     # clean data
-    cleaned_data = clean_item(req_list)
+    cleaned_data: list = clean_item(req_list)
     # call pypi
-    fulllist = await loop_calls_adv(cleaned_data)
+    fulllist: dict = await loop_calls_adv(cleaned_data, str(request_group_id))
 
     # bob = []
     # for f in tqdm(

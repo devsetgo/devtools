@@ -27,10 +27,9 @@ async def pypi_index(request):
         logger.info(form_data["requirements"])
         requirements_str = form_data["requirements"]
         raw_data: str = requirements_str
-
+        # create UUID for request
         request_group_id = uuid.uuid4()
         # store incoming data
-
         # process raw data
         req_list = await pypi_calls.process_raw(raw_data=raw_data)
         # clean data
@@ -39,7 +38,6 @@ async def pypi_index(request):
         fulllist = await pypi_calls.loop_calls_adv(
             itemList=cleaned_data, request_group_id=str(request_group_id)
         )
-
         # store returned results (bulk)
 
         values = {

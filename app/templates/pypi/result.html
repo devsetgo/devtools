@@ -26,7 +26,7 @@
                   {% for d in data.json_data_out %}
                     {{d.library}}{% if d.has_bracket==true %}
                     [{{d.bracket_content}}]{%endif%}=={{d.newVersion}} {% if d.newVersion!=d.currentVersion %}
-                    # Change from {{d.currentVersion}}{%endif%}<br>
+                    # from {{d.currentVersion}}{%endif%}<br>
                   {% endfor %}
                 </div>
 

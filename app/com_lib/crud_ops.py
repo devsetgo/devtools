@@ -2,7 +2,7 @@
 """
 database simple functions. Pass query and where needed values and get result back
 """
-
+from typing import List, Dict, Any
 from loguru import logger
 from sqlalchemy.sql import text
 
@@ -39,7 +39,7 @@ async def execute_one_db(query, values: dict):
     return result
 
 
-async def execute_many_db(query, values: dict):
+async def execute_many_db(query, values: List[Any]):
     """
     query = table.insert()
     query = table.update().where(table.c.column == value)

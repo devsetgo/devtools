@@ -7,12 +7,8 @@ from endpoints.main import crud as lib_crud
 from resources import templates
 
 
-# async def homepage(request):
-
-#     if "username" not in request.session:
-#         return RedirectResponse(url=f"/twitter-bots", status_code=303)
-
-#     return RedirectResponse(url=f"/bots/", status_code=303)
+async def homepage(request):
+    return RedirectResponse(url=f"/index", status_code=303)
 
 
 # async def homepage_page(request):
@@ -41,9 +37,9 @@ async def about_page(request):
 
 async def index(request):
 
-    unique_lib = await lib_crud.get_data()
+    # unique_lib = await lib_crud.get_data()
 
-    logger.critical(f"unique libraries {unique_lib}")
+    # logger.critical(f"unique libraries {unique_lib}")
     template: str = f"index3.html"
     context: dict = {"request": request}
     logger.critical(f"page accessed: /{template}")

@@ -21,7 +21,7 @@ Python 3.6 or higher
   - Linux: python3 app.py
   - Windows: python app.py
 - Results will be placed in the data folder in the file new_requirments.txt
-  
+
 # Example output in file
 ```
 aiosqlite==0.10.0

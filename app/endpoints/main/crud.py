@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from com_lib import crud_ops
 from com_lib.db_setup import requirements, libraries
 import uuid

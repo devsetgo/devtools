@@ -77,7 +77,7 @@ else:
     if RELEASE_ENV == "prd":
         DEBUG = False
     else:
-        DEBUG = os.environ["DEBUG"]
+        DEBUG = bool(os.environ["DEBUG"])
 
     # Sendgrid
     SENDGRID_API_KEY = os.environ["SENDGRID_API_KEY"]

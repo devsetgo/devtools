@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from typing import Dict, Any, List
 from starlette.applications import Starlette
 from starlette.middleware import Middleware
 from starlette.middleware.sessions import SessionMiddleware
@@ -18,14 +18,14 @@ from resources import init_app
 
 
 routes = [
-    Route("/", main_pages.index, name="dashboard", methods=["GET", "POST"]),
-    Route("/about", main_pages.about_page, methods=["GET"]),
+    Route("/", endpoint=main_pages.index, methods=["GET"]),
+    Route("/index", endpoint=main_pages.index, methods=["GET"]),
+    Route("/about", endpoint=main_pages.about_page, methods=["GET"]),
     Route("/health", endpoint=health_pages.health_status, methods=["GET"]),
-    Route("/pypi", pypi_pages.pypi_index, name="PYPI", methods=["GET", "POST"]),
+    Route("/pypi", endpoint=pypi_pages.pypi_index, methods=["GET", "POST"]),
     Route(
         "/pypi/results/{page}",
-        pypi_pages.pypi_result,
-        name="PYPI Results",
+        endpoint=pypi_pages.pypi_result,
         methods=["GET", "POST"],
     ),
     Mount("/static", app=StaticFiles(directory="statics"), name="static"),
@@ -37,7 +37,7 @@ middleware = [
     Middleware(CSRFProtectMiddleware, csrf_secret=settings.CSRF_SECRET),
 ]
 
-exception_handlers = {
+exception_handlers: Dict[Any, Any] = {
     403: exceptions.not_allowed,
     404: exceptions.not_found,
     500: exceptions.server_error,

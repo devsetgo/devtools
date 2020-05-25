@@ -11,7 +11,7 @@ def config_log():
     """
     Logging configuration for loguru and standard logging
     Intercepting of standard logging to loguru included
-    
+
     """
     logger.remove()
     log_path = Path.cwd().joinpath("log").joinpath("app_log.log")

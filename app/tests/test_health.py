@@ -15,10 +15,3 @@ class Test(unittest.TestCase):
         client = TestClient(app)
         response = client.get(url)
         assert response.status_code == 200
-
-    # def test_index__error(self):
-    #     uid = uuid.uuid1()
-    #     url = f"/index/{uid}"
-    #     client = TestClient(app)
-    #     response = client.get(url)
-    #     assert response.status_code == 404

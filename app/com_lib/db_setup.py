@@ -51,9 +51,9 @@ requirements = sqlalchemy.Table(
     metadata,
     sqlalchemy.Column("id", sqlalchemy.String, primary_key=True),
     sqlalchemy.Column("request_group_id", sqlalchemy.String, unique=True, index=True),
-    sqlalchemy.Column("text_in", sqlalchemy.String, index=True),
-    sqlalchemy.Column("json_data_in", sqlalchemy.JSON, index=True),
-    sqlalchemy.Column("json_data_out", sqlalchemy.JSON, index=True),
+    sqlalchemy.Column("text_in", sqlalchemy.String),
+    sqlalchemy.Column("json_data_in", sqlalchemy.JSON),
+    sqlalchemy.Column("json_data_out", sqlalchemy.JSON),
     sqlalchemy.Column("host_ip", sqlalchemy.String, index=True),
     sqlalchemy.Column("dated_created", sqlalchemy.DateTime, index=True),
 )

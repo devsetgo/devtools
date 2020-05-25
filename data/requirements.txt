@@ -1,5 +1,3 @@
-Cython==0.29.19 # Change from none
-WTForms==2.3.1 # Change from none
 aiofiles==0.5.0 # Change from none
 aiohttp==3.6.2 # Change from none
 aiomysql==0.0.20 # Change from none
@@ -13,6 +11,7 @@ cassandra-driver==3.23.0 # Change from none
 coverage==5.1 # Change from none
 coverage-badge==1.0.1 # Change from none
 cx-Oracle==7.3.0 # Change from none
+Cython==0.29.19 # Change from none
 dask==2.16.0 # Change from none
 databases==0.3.2 # Change from none
 elastic-apm==5.6.0 # Change from none
@@ -55,5 +54,6 @@ textblob==0.15.3 # Change from none
 tqdm==4.46.0 # Change from none
 ujson==2.0.3 # Change from none
 uvicorn==0.11.5 # Change from none
+WTForms==2.3.1 # Change from none
 xmltodict==0.12.0 # Change from none
 zeebe-grpc==0.23.1.0 # Change from none
