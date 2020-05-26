@@ -15,6 +15,7 @@ from endpoints.pypi_check.crud import store_in_data, store_lib_request
 from tqdm import tqdm_gui
 import re
 
+
 async def loop_calls_adv(itemList: list, request_group_id: str):
     results = []
     for i in itemList:

@@ -37,10 +37,18 @@ async def about_page(request):
 
 async def index(request):
 
-    # unique_lib = await lib_crud.get_data()
+    lib_data = await lib_crud.get_data()
+    
+    lib_data_month = await lib_crud.process_by_month(lib_data)
+    lib_sum = await lib_crud.sum_lib(lib_data_month)
+    library_data_count = await lib_crud.process_by_lib(lib_data)
+    lib_data_sum = await lib_crud.sum_lib_count(library_data_count)
+    
+    data: dict ={"lib_data_month":lib_data_month,"lib_sum":lib_sum,"library_data_count":library_data_count,"lib_data_sum":lib_data_sum}
+    
+    logger.critical(data)
 
-    # logger.critical(f"unique libraries {unique_lib}")
     template: str = f"index3.html"
-    context: dict = {"request": request}
+    context: dict = {"request": request, "data":data}
     logger.critical(f"page accessed: /{template}")
     return templates.TemplateResponse(template, context)
