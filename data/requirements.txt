@@ -17,11 +17,11 @@ databases==0.3.2 # Change from none
 elastic-apm==5.6.0 # Change from none
 elasticsearch-dsl==7.2.0 # Change from none
 email_validator==1.1.1 # Change from none
-fastapi==0.54.2 # Change from none
-flake8==3.8.1 # Change from none
+fastapi==0.55.1 # Change from none
+flake8==3.8.2 # Change from none
 graphene==2.1.8 # Change from none
 gunicorn==20.0.4 # Change from none
-httpx==0.12.1 # Change from none
+httpx==0.13.1 # Change from none
 itsdangerous==1.1.0 # Change from none
 jinja2==2.11.2 # Change from none
 kafka-python==2.0.1 # Change from none
@@ -35,14 +35,14 @@ pyjwt==1.7.1 # Change from none
 pylint==2.5.2 # Change from none
 pymongo==3.10.1 # Change from none
 pytest==5.4.2 # Change from none
-pytest-cov==2.8.1 # Change from none
+pytest-cov==2.9.0 # Change from none
 pytest-mock==3.1.0 # Change from none
 python-dotenv==0.13.0 # Change from none
 python-multipart==0.0.5 # Change from none
 pyyaml==5.3.1 # Change from none
 requests==2.23.0 # Change from none
 requests-mock==1.8.0 # Change from none
-scrypt==0.8.14 # Change from none
+scrypt==0.8.15 # Change from none
 seaborn==0.10.1 # Change from none
 selenium==3.141.0 # Change from none
 silly==1.1.0 # Change from none
@@ -56,4 +56,4 @@ ujson==2.0.3 # Change from none
 uvicorn==0.11.5 # Change from none
 WTForms==2.3.1 # Change from none
 xmltodict==0.12.0 # Change from none
-zeebe-grpc==0.23.1.0 # Change from none
+zeebe-grpc==0.23.2.0 # Change from none
