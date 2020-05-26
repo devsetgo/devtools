@@ -1,0 +1,19 @@
+# ignore project files
+.git
+.github
+settings.json
+scratch_pad/
+.vscode/
+venv/
+_venv/
+flake8_report/
+htmlcov/
+.coverage
+coverage.xml
+coverage.svg
+api.db
+tests/
+__pycache__
+.pytest_cache
+sqlite_db/api.db
+.env

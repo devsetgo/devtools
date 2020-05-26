@@ -1,0 +1,72 @@
+      <!-- User Dropdown Menu -->
+          {% if request.session.username %}
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+              <i class="fas fa-user"></i>
+              <!-- <span class="badge badge-warning navbar-badge">55</span> -->
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+              <!-- <span class="dropdown-item dropdown-header">15 Notifications</span> -->
+              <div class="dropdown-divider"></div>
+              <!-- <a href="/user/login" class="dropdown-item">
+                <i class="mr-2 fas fa-sign-in-alt"> </i>
+                Login
+              </a> -->
+
+          <div class="dropdown">
+            <a style="color: white" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="{{ request.session.avatar_url }}" class="rounded float-left" alt="{{ request.session.username }}" width=20px height=20px/>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+              <p class="dropdown-header">Logged in as <strong>{{ request.session.username }}</strong></p>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/profile">Your profile</a>
+              <div class="dropdown-divider"></div>
+              <form action="/auth/logout" method="POST">
+                <button class="dropdown-item btn-link" type="submit">Logout</button>
+              </form>
+            </div>
+          </div>
+          {% else %}
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="fas fa-user"></i>
+                <!-- <span class="badge badge-warning navbar-badge">55</span> -->
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <!-- <span class="dropdown-item dropdown-header">15 Notifications</span> -->
+                <div class="dropdown-divider"></div>
+
+                <div class="dropdown-divider"></div>
+
+                <form class="form-inline" action="/auth/login" , method="POST">
+                    <button type="button" class="btn btn-block btn-outline-primary" data-toggle="Login with Github" type="submit">Login with Github</button>
+                    <!-- <button class="btn btn-outline-light" type="submit">Login</button> -->
+                </form>
+
+            </li>
+          {% endif %}
+
+          <!-- <div class="dropdown-divider"></div>
+          <a href="/user/register" class="dropdown-item">
+            <i class="mr-2 fas fa-user-edit"> </i>
+            Register
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="/user/account" class="dropdown-item">
+            <i class="mr-2 fas fa-user-circle"> </i>
+            Account
+          </a>
+          <a href="/user/password" class="dropdown-item">
+            <i class="mr-2 fas fa-key"> </i>
+            Change Password
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="/user/logout" class="dropdown-item">
+            <i class="mr-2 fas fa-sign-out-alt"> </i>
+            Logout
+          </a> -->
+
+      </li>
+

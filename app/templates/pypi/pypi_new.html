@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block page_title %}| Create New Bot{% endblock %}
+{% block page_stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static' , path='plugins/toastr/toastr.min.css') }}">
+{% endblock %}
+{% block page_breadcrumb %} Pypi Check{% endblock %}
+{% block page_head_title %}Pypi Check{% endblock %}
+{% block body %}
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-6">
+        <!-- general form elements -->
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Pypi Update</h3>
+          </div>
+          <!-- /.card-header -->
+
+          <!-- form start -->
+
+          <div class="row">
+
+            <div class="col-5">
+              <form action="/pypi/" method="post" enctype="multipart/form-data">
+                {{ form.csrf_token }}
+                <br>
+                <div class="input-group mb-5">
+                  {{ form.requirements(placeholder='Paste Requirements.txt here',rows='10',cols='80') }}
+                  <!-- <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fab fa-twitter"></span>
+                    </div>
+                  </div> -->
+                </div>
+                <div class="input-group mb-5">
+                  <br>
+                  <button type="submit" class="btn btn-primary btn-block" title="Create Bot in deactivated mode">Check
+                    For Updates</button>
+                  <br>
+
+                </div>
+              </form>
+            </div>
+            <div class="col-5">
+              <p></p>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="50"
+                aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                  50%
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /.col -->
+        </div>
+
+      </div>
+
+      <!-- /.card -->
+
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+{% endblock %}
+
+{% block page_sidebar_content %}
+<div class="p-3">
+  <h5>Title</h5>
+  <p>Sidebar content</p>
+</div>
+{% endblock %}
+{% block page_scripts %}
+<!-- page scripts-->
+<script src="{{ url_for('static' , path='plugins/toastr/toastr.min.js') }}"></script>
+
+{% for field, errors in form.errors.items() %}
+<script type=text/javascript>
+  toastr.error("{{', '.join(errors)}}", "{{form[field].id }}")
+</script>
+{% endfor %}
+
+
+{% endblock %}

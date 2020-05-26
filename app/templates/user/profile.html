@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+{% block page_title %}| {{ request.session.username|title }}{% endblock %}
+{% block page_stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static' , path='plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
+{% endblock %}
+{% block page_breadcrumb %} {{ request.session.username|title }}{% endblock %}
+{% block page_head_title %}{{ user_data.name|title }} - {{ user_data.location|title }}{% endblock %}
+{% block body %}
+<!-- Main content -->
+<div class="content">
+  {% if request.session.username %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="info-box">
+          <img src="{{ request.session.avatar_url }}" class="rounded float-left" alt="{{ request.session.username }}"
+            width=60px height=60px />
+          <div class="info-box-content">
+            <span class="info-box-number">{{ user_data.bio }}</span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <div class="col-md-2 col-sm-6 col-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-info"><i class="fab fa-github"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Following</span>
+            <span class="info-box-number">{{ user_data.following}}</span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <div class="col-md-2 col-sm-6 col-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-info"><i class="fab fa-github-square"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Followers</span>
+            <span class="info-box-number">{{ user_data.followers}}</span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <div class="col-md-2 col-sm-6 col-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-info"><i class="fas fa-code"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Repos</span>
+            <span class="info-box-number">{{ user_data.public_repos}}</span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-2 col-sm-6 col-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-success"><i class="far fa-file-code"></i></span>
+
+          <div class="info-box-content">
+            <span class="info-box-text">Gists</span>
+            <span class="info-box-number">{{ user_data.public_gists}}</span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<section class="content">
+  <div class="row">
+    <div class="col-md-7">
+      <!-- /.card -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Public Repos - Max 100</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <table id="example2" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Repo Name</th>
+                <th>Open Issues</th>
+                <th>Watchers</th>
+                <th>Forks</th>
+                <th>Repo URL</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for repo in repo_data %}
+              <tr>
+                <td>{{repo.name}}</td>
+                <td><a href="https://github.com/{{request.session.username}}/{{repo.name}}/pulls"
+                    target="_blank">{{repo.open_issues_count}}</a></td>
+                <td>{{repo.watchers}}</td>
+                <td>{{repo.forks_count}}</td>
+                <td><a href="{{ repo.html_url }}" target="_blank">{{repo.full_name}}</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Repo Name</th>
+                <th>Open Issues</th>
+                <th>Watchers</th>
+                <th>Forks</th>
+                <th>Repo URL</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+    </div>
+    <div class="col-md-5">
+      <!-- /.card -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Events - Last 100</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Typo</th>
+                <th>Repo</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for event in user_events %}
+              <tr>
+                <td>{{event.type}}</td>
+                <td><a href="{{ event.payload }}" target="_blank">{{event.repo.name}}</a></td>
+                <th>{{event.payload.action}}</th>
+              </tr>
+              {% endfor %}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Typo</th>
+                <th>Repo</th>
+                <th>Action</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+    </div>
+
+
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+</section>
+{% else %}
+nope
+{% endif %}
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+{% endblock %}
+
+{% block page_sidebar_content %}
+<div class="p-3">
+  <h5>Title</h5>
+  <p>Sidebar content</p>
+</div>
+{% endblock %}
+{% block page_scripts %}
+<!-- page scripts-->
+<!-- DataTables -->
+<script src="{{ url_for('static' , path='plugins/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ url_for('static' , path='plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+<!-- AdminLTE App -->
+
+<!-- AdminLTE for demo purposes -->
+<script src="{{ url_for('static' , path='dist/js/demo.js') }}"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "order": [[1, "desc"]],
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+    });
+  });
+</script>
+
+{% endblock %}

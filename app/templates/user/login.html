@@ -1,0 +1,75 @@
+{% extends "base_user_login.html" %}
+{% block page_title %}Login{% endblock %}
+{% block page_stylesheet %}
+<!-- overlayScrollbars -->
+<link rel="stylesheet" href="{{ url_for('static' , path='plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static' , path='plugins/toastr/toastr.min.css') }}">
+{% endblock %}
+{% block page_breadcrumb %}Login3{% endblock %}
+{% block page_head_title %}Login 3{% endblock %}
+{% block body %}
+
+
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="/"><b>Twitter</b>Star</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+
+        <form action="/user/login" method="post">
+          {{ form.csrf_token }}
+          <div class="input-group mb-3">
+            {{ form.username(placeholder='User Name') }}
+            <!-- <input type="email" class="form-control" placeholder="Email"> -->
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            {{ form.password(placeholder='Password') }}
+            <!-- <input type="password" class="form-control" placeholder="Password"> -->
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+
+              </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-4">
+              <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+        <p class="mb-1">
+          <a href="/user/forgot">I forgot my password</a>
+        </p>
+        <p class="mb-0">
+          <a href="/user/register" class="text-center">Register a new membership</a>
+        </p>
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+  <!-- /.login-box -->
+  {% endblock %}
+  {% block page_scripts %}
+  <!-- page scripts-->
+  <script src="{{ url_for('static' , path='plugins/toastr/toastr.min.js') }}"></script>
+  {% for field, errors in form.errors.items() %}
+  <script type=text/javascript>
+    toastr.error("{{', '.join(errors)}}", "{{form[field].id }}")
+  </script>
+  {% endfor %}
+  {% endblock %}

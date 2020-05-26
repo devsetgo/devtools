@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block page_title %}| All Access Requests{% endblock %}
+{% block page_stylesheet %}
+<!-- DataTables -->
+<link rel="stylesheet" href="{{ url_for('static' , path='plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
+{% endblock %}
+{% block page_breadcrumb %} All Access Requests{% endblock %}
+{% block page_head_title %}All Access Requests{% endblock %}
+{% block body %}
+<!-- Main content -->
+
+    <section class="content">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">DataTable with minimal features & hover style</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>User Name</th>
+                  <th>Reviewed</th>
+                  <th>Rejected</th>
+                  <th>Admin</th>
+                  <th>Date Created</th>
+                  <th>Date Updated</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Begin loop -->
+                {% for item in approval_list %}
+                  <tr>
+                  <td><a href="/admin/review/{{ item.access_id }}">{{ item.username }}</a></td>
+                  <td>{{ item.is_reviewed }}</>
+                  <td>{{ item.is_rejected }}</td>
+                  <td>{{ item.is_admin }}</td>
+                  <td>{{ item.date_create }}</td>
+                  <td>{{ item.date_updated }}</td>
+                </tr>
+                <!-- End loop -->
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>User Name</th>
+                  <th>Reviewed</th>
+                  <th>Rejected</th>
+                  <th>Admin</th>
+                  <th>Date Created</th>
+                  <th>Date Updated</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+{% endblock %}
+
+{% block page_sidebar_content %}
+<!-- blank and demo script adds page configuration example -->
+<!-- <div class="p-3">
+  <h5>Title</h5>
+  <p>Sidebar content</p>
+</div> -->
+{% endblock %}
+{% block page_scripts %}
+<!-- page scripts-->
+<!-- DataTables -->
+<script src="{{ url_for('static' , path='plugins/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ url_for('static' , path='plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+<!-- AdminLTE App -->
+
+<!-- AdminLTE for demo purposes -->
+<script src="{{ url_for('static' , path='dist/js/demo.js') }}"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+    });
+  });
+</script>
+{% endblock %}
+

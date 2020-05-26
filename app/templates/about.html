@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% block page_title %}| Contact or About{% endblock %}
+{% block page_stylesheet %}{% endblock %}
+{% block page_breadcrumb %} Contact or About{% endblock %}
+{% block page_head_title %}Contact or About Page{% endblock %}
+{% block body %}
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="card card-primary card-outline">
+      <div class="card-header">
+        <h3 class="card-title">
+          <i class="fas fa-star"></i>
+          Starlette Dashboard Template
+        </h3>
+      </div>
+      <div class="card-body">
+        <h4>Template</h4>
+        <div class="row">
+          <div class="col-5 col-sm-3">
+            <div class="nav flex-column nav-tabs h-100" id="vert-tabs-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link active" id="vert-tabs-home-tab" data-toggle="pill" href="#vert-tabs-home" role="tab"
+                aria-controls="vert-tabs-home" aria-selected="true">Built For</a>
+              <a class="nav-link" id="vert-tabs-profile-tab" data-toggle="pill" href="#vert-tabs-profile" role="tab"
+                aria-controls="vert-tabs-profile" aria-selected="false">Built With</a>
+
+              <a class="nav-link" id="vert-tabs-settings-tab" data-toggle="pill" href="#vert-tabs-settings" role="tab"
+                aria-controls="vert-tabs-settings" aria-selected="false">How to Run</a>
+            </div>
+          </div>
+          <div class="col-7 col-sm-9">
+            <div class="tab-content" id="vert-tabs-tabContent">
+              <div class="tab-pane text-left fade show active" id="vert-tabs-home" role="tabpanel"
+                aria-labelledby="vert-tabs-home-tab">
+                <div class="col-lg-4 col-md-6">
+                  <aside class="app-nav alt">
+                    <section class="card">
+                      <div class="card-header user-header alt bg-dark">
+                        <div class="media">
+                          <a href="#">
+                            <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt=""
+                              src="https://avatars3.githubusercontent.com/u/16019894?s=400&u=d7bdb0ed5449babb2581bc8600e3db13ea8a2b00&v=4">
+                          </a>
+                          <div class="media-body">
+                            <h2 class="text-light display-6"><i class="fa fa-star-half-o"></i> Starlette Dashboard
+                            </h2>
+                            <p>Application Template</p>
+                          </div>
+                        </div>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                          <a href="https://github.com/devsetgo/starlette-dashboard"><i class="fa fa-github"></i>
+                            Github -
+                            devsetgo/starlette-dashboard</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="https://github.com/devsetgo/starlette-dashboard/actions"> <i
+                              class="fa fa-signal"></i> Test Coverage
+                            <img class="pull-right"
+                              src="https://codecov.io/gh/devsetgo/starlette-dashboard/branch/master/graph/badge.svg"></a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="https://github.com/devsetgo/starlette-dashboard"> <i class="fa fa-signal"></i>
+                            Tests <img class="pull-right"
+                              src="https://github.com/devsetgo/starlette-dashboard/workflows/Run%20Tests/badge.svg"></a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="https://sonarcloud.io/dashboard?id=devsetgo_starlette-dashboard"> <i
+                              class="fa fa-signal"></i> Sonar
+                            Maintainability <img class="pull-right"
+                              src="https://sonarcloud.io/api/project_badges/measure?project=devsetgo_starlette-dashboard&metric=sqale_rating"></a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="https://sonarcloud.io/dashboard?id=devsetgo_starlette-dashboard"> <i
+                              class="fa fa-signal"></i> Sonar
+                            Reliability <img class="pull-right"
+                              src="https://sonarcloud.io/api/project_badges/measure?project=devsetgo_starlette-dashboard&metric=reliability_rating"></a>
+                        </li>
+                      </ul>
+
+                    </section>
+                  </aside>
+                </div>
+                <p class="card-text">
+                  This project is built to be used as a template for Starlette based sites. It is free to use as you
+                  wish. I
+                  would like to know who, where or what it is used for. Feel free to email me at mike ryan 56 @
+                  gmail . com.
+                </p>
+                Contributions to improve, fix, or add functions are welcome!
+
+              </div>
+              <div class="tab-pane fade" id="vert-tabs-profile" role="tabpanel" aria-labelledby="vert-tabs-profile-tab">
+                <p class="card-text">
+                  This template is built with Starlette, AdminLTE 3.0 HTML template, and Uvicorn as the ASGI Server.
+                  There
+                  is a Docker Image available to try.
+                </p>
+                <ul class="list-unstyled">
+                  <li class="list-group-item">
+                    <a href="https://Starlette.io" target="_blank" class="card-link">Starlette.io</a></li>
+                  <li class="list-group-item">
+                    <a href="https://adminlte.io/" target="_blank" class="card-link">AdminLTE.io</a></li>
+                  <li class="list-group-item">
+                    <a href="https://www.uvicorn.org/" target="_blank" class="card-link">Uvicorn ASGI Server</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="https://hub.docker.com/repository/docker/mikeryan56/starlette-dashboard" target="_blank"
+                      class="card-link">Docker Image</a></li>
+                </ul>
+              </div>
+
+              <div class="tab-pane fade" id="vert-tabs-settings" role="tabpanel"
+                aria-labelledby="vert-tabs-settings-tab">
+                <pre><code>
+                  ### Use it
+                  -<span class="ruby"> git clone <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/github.com/devsetgo</span><span class="hljs-regexp">/starlette-dashboard
+              </span></span>    -<span class="ruby"><span class="hljs-regexp"> create a virtualenv on linux or Windows Subsystem Linux
+              </span></span>
+                  #### Run APP
+                  First Change directory to app
+
+                  UVICORN
+                  Development:
+                  ~~~~
+                  uvicorn main:app --port 5000 --reload
+                  python3 main.py
+                  ~~~~
+                  Production:
+                  ~~~~
+                  uvicorn main:app --workers 2
+                  gunicorn -c gunicorn_cfg.py main:app
+                  # Note: gunicorn is the config for the dockerfile
+                  ~~~~
+
+                  Docker
+                  ~~~~
+                  Docker: docker pull mikeryan56/starlette-dashboard:latest (not implemented)
+                  ~~~~
+
+                  #### Run Tests
+                  ~~~~
+                  python3 -m pytest
+                  ~~~~
+
+                  #### Create coverage badge
+                  ~~~~
+                  coverage-badge -o coverage.svg -f
+                  ~~~~
+
+                  #### Pre-Commit &amp; Hooks
+                  ~~~~
+                  -<span class="ruby"><span class="hljs-regexp"> Follow install instructionsL: [https:/</span><span class="hljs-regexp">/pre-commit.com/</span><span class="hljs-comment">#install](https://pre-commit.com/#install)</span>
+              </span>    -<span class="ruby"> pre-commit install
+              </span>    -<span class="ruby"> pre-commit run -a
+              </span>    ~~~~
+              </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- /.card -->
+      </div>
+    </div>
+    <!-- /.card -->
+
+    <!-- /.card -->
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content-wrapper -->
+</div>
+<!-- /.content-wrapper -->
+{% endblock %}
+
+{% block page_sidebar_content %}
+<div class="p-3">
+  <h5>Title</h5>
+  <p>Sidebar content</p>
+</div>
+{% endblock %}
+{% block page_scripts %}
+<!-- page scripts-->
+{% endblock %}

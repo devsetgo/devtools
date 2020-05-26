@@ -1,0 +1,268 @@
+{% extends "base.html" %}
+{% block page_title %}| Dashboard v3{% endblock %}
+{% block page_stylesheet %}
+
+{% endblock %}
+{% block page_breadcrumb %} Dashboard v3{% endblock %}
+{% block page_head_title %}Dashboard v3{% endblock %}
+{% block body %}
+<!-- Main content -->
+<div class="content">
+  <div class="container-fluid">
+
+    <div class="row">
+      <!-- /.col-md-6 -->
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header border-0">
+            <div class="d-flex justify-content-between">
+              <h3 class="card-title">Pypi Updates Per Month</h3>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="d-flex">
+              <p class="d-flex flex-column">
+                <span class="text-bold text-lg">{{data.lib_sum}}</span>
+                <span>Pypi Updates</span>
+              </p>
+              <p class="ml-auto d-flex flex-column text-right">
+                <span class="text-success">
+                  <i class="fas fa-arrow-up"></i> 33.1%
+                </span>
+                <span class="text-muted">Since last month</span>
+              </p>
+            </div>
+            <!-- /.d-flex -->
+
+            <div class="position-relative mb-4">
+              <canvas id="pypi-month-chart" height="200"></canvas>
+            </div>
+
+            <div class="d-flex flex-row justify-content-end">
+              <span class="mr-2">
+                <i class="fas fa-square text-primary"></i> This year
+              </span>
+
+              <!-- <span>
+                <i class="fas fa-square text-gray"></i> Last year
+              </span> -->
+            </div>
+          </div>
+        </div>
+        <!-- /.card -->
+
+      </div>
+      <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header border-0">
+            <div class="d-flex justify-content-between">
+              <h3 class="card-title">Online Store Visitors</h3>
+              <a href="javascript:void(0);">View Report</a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="d-flex">
+              <p class="d-flex flex-column">
+                <span class="text-bold text-lg">{{data.lib_data_sum}}</span>
+                <span>Visitors Over Time</span>
+              </p>
+              <p class="ml-auto d-flex flex-column text-right">
+                <span class="text-success">
+                  <i class="fas fa-arrow-up"></i> 12.5%
+                </span>
+                <span class="text-muted">Since last week</span>
+              </p>
+            </div>
+            <!-- /.d-flex -->
+
+            <div class="position-relative mb-4">
+              <canvas id="pypi-lib-chart" height="200"></canvas>
+            </div>
+
+            <div class="d-flex flex-row justify-content-end">
+              <span class="mr-2">
+                <i class="fas fa-square text-primary"></i> This Week
+              </span>
+
+              <span>
+                <i class="fas fa-square text-gray"></i> Last Week
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- /.card -->
+      </div>
+    </div><!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+  {% endblock %}
+
+
+  {% block page_sidebar_content %}
+  <!-- blank and demo script adds page configuration example -->
+
+  {% endblock %}
+  {% block page_scripts %}
+  <!-- page scripts-->
+  <!-- OPTIONAL SCRIPTS -->
+  <script>
+    $(function () {
+      'use strict'
+    
+      var ticksStyle = {
+        fontColor: '#495057',
+        fontStyle: 'bold'
+      }
+    
+      var mode = 'index'
+      var intersect = true
+    
+      var $pypiMonthChart = $('#pypi-month-chart')
+      var pypiMonthChart  = new Chart($pypiMonthChart, {
+        type   : 'bar',
+        data   : {
+          labels  : [{% for key, value in data.lib_data_month.items() %}'{{key}}',{% endfor %}],
+          datasets: [
+            {
+              backgroundColor: '#007bff',
+              borderColor    : '#007bff',
+              data           : [{% for key, value in data.lib_data_month.items() %}'{{value}}',{% endfor %}]
+            },
+
+          ]
+        },
+        options: {
+          maintainAspectRatio: false,
+          tooltips           : {
+            mode     : mode,
+            intersect: intersect
+          },
+          hover              : {
+            mode     : mode,
+            intersect: intersect
+          },
+          legend             : {
+            display: false
+          },
+          scales             : {
+            yAxes: [{
+              // display: false,
+              gridLines: {
+                display      : true,
+                lineWidth    : '4px',
+                color        : 'rgba(0, 0, 0, .2)',
+                zeroLineColor: 'transparent'
+              },
+              ticks    : $.extend({
+                beginAtZero: true,
+    
+                // Include a dollar sign in the ticks
+                callback: function (value, index, values) {
+                  if (value >= 1000) {
+                    value /= 1000
+                    value += 'k'
+                  }
+                  return value
+                }
+              }, ticksStyle)
+            }],
+            xAxes: [{
+              display  : true,
+              gridLines: {
+                display: false
+              },
+              ticks    : ticksStyle
+            }]
+          }
+        }
+      })
+    })
+
+  </script>
+  <script>
+    $(function () {
+      'use strict'
+    
+      var ticksStyle = {
+        fontColor: '#495057',
+        fontStyle: 'bold'
+      }
+    
+      var mode = 'index'
+      var intersect = true
+    
+      var $pypiLibChart = $('#pypi-lib-chart')
+      var pypiLibChart  = new Chart($pypiLibChart, {
+        type   : 'bar',
+        data   : {
+          labels  : [{% for key, value in data.library_data_count|dictsort(false, 'value',reverse=true) %}'{{key}}',{% endfor %}],
+          datasets: [
+            {
+              backgroundColor: '#007bff',
+              borderColor    : '#007bff',
+              data           : [{% for key, value in data.library_data_count|dictsort(false, 'value',reverse=true) %}'{{value}}',{% endfor %}]
+            },
+
+          ]
+        },
+        options: {
+          maintainAspectRatio: false,
+          tooltips           : {
+            mode     : mode,
+            intersect: intersect
+          },
+          hover              : {
+            mode     : mode,
+            intersect: intersect
+          },
+          legend             : {
+            display: false
+          },
+          scales             : {
+            yAxes: [{
+              // display: false,
+              gridLines: {
+                display      : true,
+                lineWidth    : '4px',
+                color        : 'rgba(0, 0, 0, .2)',
+                zeroLineColor: 'transparent'
+              },
+              ticks    : $.extend({
+                beginAtZero: true,
+    
+                // Include a dollar sign in the ticks
+                callback: function (value, index, values) {
+                  if (value >= 1000) {
+                    value /= 1000
+                    value += 'k'
+                  }
+                  return value
+                }
+              }, ticksStyle)
+            }],
+            xAxes: [{
+              display  : true,
+              gridLines: {
+                display: false
+              },
+              ticks    : ticksStyle
+            }]
+          }
+        }
+      })
+    })
+
+  </script>
+  <script src="{{ url_for('static' , path='plugins/chart.js/Chart.min.js') }}"></script>
+  <script src="{{ url_for('static' , path='dist/js/demo.js') }}"></script>
+  <script src="{{ url_for('static' , path='dist/js/pages/dashboard3.js') }}"></script>
+  {% endblock %}
