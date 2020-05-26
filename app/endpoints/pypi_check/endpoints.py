@@ -25,7 +25,7 @@ async def pypi_index(request):
     form = await forms.RequirementsForm.from_formdata(request)
     form_data = await request.form()
     if form.validate_on_submit():
-
+        logger.critical(form_data)
         logger.info(form_data["requirements"])
         requirements_str = form_data["requirements"]
         raw_data: str = requirements_str
