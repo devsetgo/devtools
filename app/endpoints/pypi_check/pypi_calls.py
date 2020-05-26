@@ -1,19 +1,17 @@
 # -*- coding: utf-8 -*-
 # from pathlib import Path
-from tqdm import tqdm
 import asyncio
-from datetime import datetime
-from unsync import unsync
-import requests
 import os
 import re
-import asyncio
-from loguru import logger
-import httpx
 import uuid
-from endpoints.pypi_check.crud import store_in_data, store_lib_request
-from tqdm import tqdm_gui
-import re
+from datetime import datetime
+
+import httpx
+import requests
+from loguru import logger
+
+from endpoints.pypi_check.crud import store_in_data
+from endpoints.pypi_check.crud import store_lib_request
 
 
 async def loop_calls_adv(itemList: list, request_group_id: str):
@@ -48,18 +46,6 @@ async def call_pypi_adv(url):
     else:
         resp = r.json()
         # logger.debug(resp)
-        result = {"newVersion": resp["info"]["version"]}
-    return result
-
-
-def call_pypi(url):
-    r = requests.get(url)
-    logger.info(r.status_code)
-    resp = r.json()
-    if r.status_code != 200:
-        result = {"newVersion": resp["info"]["version"]}
-    else:
-        resp = r.json()
         result = {"newVersion": resp["info"]["version"]}
     return result
 

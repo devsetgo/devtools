@@ -117,15 +117,15 @@
   <script>
     $(function () {
       'use strict'
-    
+
       var ticksStyle = {
         fontColor: '#495057',
         fontStyle: 'bold'
       }
-    
+
       var mode = 'index'
       var intersect = true
-    
+
       var $pypiMonthChart = $('#pypi-month-chart')
       var pypiMonthChart  = new Chart($pypiMonthChart, {
         type   : 'bar',
@@ -164,7 +164,7 @@
               },
               ticks    : $.extend({
                 beginAtZero: true,
-    
+
                 // Include a dollar sign in the ticks
                 callback: function (value, index, values) {
                   if (value >= 1000) {
@@ -191,15 +191,15 @@
   <script>
     $(function () {
       'use strict'
-    
+
       var ticksStyle = {
         fontColor: '#495057',
         fontStyle: 'bold'
       }
-    
+
       var mode = 'index'
       var intersect = true
-    
+
       var $pypiLibChart = $('#pypi-lib-chart')
       var pypiLibChart  = new Chart($pypiLibChart, {
         type   : 'bar',
@@ -238,7 +238,7 @@
               },
               ticks    : $.extend({
                 beginAtZero: true,
-    
+
                 // Include a dollar sign in the ticks
                 callback: function (value, index, values) {
                   if (value >= 1000) {

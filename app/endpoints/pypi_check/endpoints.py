@@ -1,16 +1,18 @@
 # -*- coding: utf-8 -*-
+import uuid
+from datetime import datetime
+
 from loguru import logger
 from starlette.exceptions import HTTPException
 from starlette.responses import RedirectResponse
-from datetime import datetime
-from endpoints.pypi_check import forms
-from resources import templates
 from starlette_wtf import csrf_protect
+
+from endpoints.pypi_check import forms
 from endpoints.pypi_check import pypi_calls  # import main, process_raw
 from endpoints.pypi_check.crud import get_request_group_id
-import uuid
 from endpoints.pypi_check.crud import store_in_data
-from tqdm import tqdm, tqdm_gui
+from resources import templates
+
 
 base: str = "pypi"
 
