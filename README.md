@@ -1,9 +1,8 @@
-# PIP Requirements Checker
-I got tired of trying to figure out which libraries are updated, so I created a simple way to check if your requirements.txt file is up-to-date. Add your requirements.txt to the data folder and then run it to check if the version has changed at PyPI.
-
+# Pypi Requirements Checker
+I got tired of trying to check if there is a new version of a library for projects. So I created a way to drop my requirements.txt into a box and then call Pypi to get the lastest version.
 
 ### Notes
-Python 3.6 or higher
+Python 3.8 or higher
 
 ## How to User
 - git clone https://github.com/devsetgo/pip-checker.git
@@ -14,17 +13,22 @@ Python 3.6 or higher
   - Linux: source env/bin/activate
   - Windows: env\scripts\activate
 - Install App requirements
-  - Linux: pip3 install -r requirments.txt
+  - cd app/
+  - Linux: pip3 install -r requirments.txt or ./scripts/install
   - Windows: pip install -r requirements.txt
 - Place **your* requirements.txt in the data folder
 - Run application
-  - Linux: python3 app.py
-  - Windows: python app.py
-- Results will be placed in the data folder in the file new_requirments.txt
+  - Linux: ./scripts/dev_run.sh
+  - Windows: uvicorn main:app --port 5000 --reload
+  - Docker: docker run mikeryan56/pypi-checker:latest
 
-# Example output in file
-```
-aiosqlite==0.10.0
-alembic==1.0.9 # Change from 1.0.8
-```
+Browser localhost:5000 (or where ever you have it running)
+
+
+### Try The App
+'''
+httpx
+starlette==0.11.0
+
+'''
 
