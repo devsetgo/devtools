@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import unittest
-import uuid
 
 # from starlette.testclient import TestClient
 from async_asgi_testclient import TestClient as Async_TestClient
