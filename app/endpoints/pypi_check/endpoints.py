@@ -3,7 +3,6 @@ import uuid
 from datetime import datetime
 
 from loguru import logger
-from starlette.exceptions import HTTPException
 from starlette.responses import RedirectResponse
 from starlette_wtf import csrf_protect
 

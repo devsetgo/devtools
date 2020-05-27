@@ -3,11 +3,9 @@
 database simple functions. Pass query and where needed values and get result back
 """
 from typing import Any
-from typing import Dict
 from typing import List
 
 from loguru import logger
-from sqlalchemy.sql import text
 
 from com_lib.db_setup import database
 

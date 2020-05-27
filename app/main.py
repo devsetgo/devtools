@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from typing import Any
 from typing import Dict
-from typing import List
 
 from starlette.applications import Starlette
 from starlette.middleware import Middleware

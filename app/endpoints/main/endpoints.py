@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from loguru import logger
-from starlette.exceptions import HTTPException
 from starlette.responses import RedirectResponse
 
 from endpoints.main import crud as lib_crud
@@ -8,12 +7,12 @@ from resources import templates
 
 
 async def homepage(request):
-    return RedirectResponse(url=f"/index", status_code=303)
+    return RedirectResponse(url="/index", status_code=303)
 
 
 async def about_page(request):
 
-    template: str = f"about.html"
+    template: str = "about.html"
     context: dict = {"request": request}
     logger.info(f"page accessed: /{template}")
     return templates.TemplateResponse(template, context)
@@ -38,7 +37,7 @@ async def index(request):
 
     logger.critical(data)
 
-    template: str = f"index3.html"
+    template: str = "index3.html"
     context = {"request": request, "data": data}
     logger.critical(f"page accessed: /{template}")
     return templates.TemplateResponse(template, context)

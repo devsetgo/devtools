@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 # from pathlib import Path
-import asyncio
-import os
 import re
 import uuid
 from datetime import datetime
 
 import httpx
-import requests
 from loguru import logger
 
 from endpoints.pypi_check.crud import store_in_data
