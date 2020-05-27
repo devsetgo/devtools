@@ -12,6 +12,7 @@ async def redirect_if_needed(request, exc):
         )
         return RedirectResponse(url="/", status_code=303)
 
+
 async def error(request):
     """
     An example error. Switch the `debug` setting to see either tracebacks or 500 pages.

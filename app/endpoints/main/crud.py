@@ -45,7 +45,7 @@ async def process_by_lib(data: dict) -> dict:
     library_list = []
     for d in data:
         library_list.append(d["library"])
-    result: dict = dict(collections.Counter(library_list))
+    result: dict = dict(collections.Counter(library_list).most_common(25))
     logger.debug(f"by library: {result}")
     return result
 

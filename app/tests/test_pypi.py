@@ -14,7 +14,6 @@ class Test(unittest.TestCase):
         url = f"/pypi"
         response = await client.get(url)
         assert response.status_code == 200
-        # assert "X-Process-Time" in response.headers
 
     # async def test_index(self):
 
