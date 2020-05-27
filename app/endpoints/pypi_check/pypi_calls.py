@@ -48,7 +48,7 @@ async def call_pypi_adv(url):
 
 
 def pattern_between_two_char(text_string: str) -> list:
-    pattern = f"\[(.+?)\]+?"
+    pattern = "\\[(.+?)\\]+?"
     result_list = re.findall(pattern, text_string)
     result = result_list[0]
     return result
@@ -67,18 +67,19 @@ def clean_item(items: list):
 
         if (
             len(i.strip()) != 0
-            and comment == False
-            and recur_file == False
-            and empty_line == False
+            and comment is False
+            and recur_file is False
+            and empty_line is False
         ):
-            # print(i)
+
+            logger.debug(i)
             has_bracket = None
             bracket_content = None
             if "[" in i:
                 has_bracket = True
-                # print(has_bracket)
+                logger.debug(has_bracket)
                 bracket_content = pattern_between_two_char(i)
-                print(bracket_content)
+                logger.debug(bracket_content)
 
             logicList = ["==", ">=", "<=", ">", "<"]
             if "==" in i:
@@ -95,11 +96,11 @@ def clean_item(items: list):
                 new_i = i
 
             bracketList = ["[", "]", "(", ")"]
-            cleaned_up_i = re.sub("[\(\[].*?[\)\]]", "", new_i)
-            # print(cleaned_up_i)
+            cleaned_up_i = re.sub("[\\(\\[].*?[\\)\\]]", "", new_i)
+            logger.debug(cleaned_up_i)
             m = cleaned_up_i
             pipItem = m.split()
-            # print(pipItem)
+            logger.debug(pipItem)
 
             library = pipItem[0]
             try:
@@ -114,11 +115,11 @@ def clean_item(items: list):
                 "bracket_content": bracket_content,
             }
 
-            # print(cleaned_lib['library'])
+            logger.debug(cleaned_lib['library'])
             lib = cleaned_lib["library"]
             if not any(l["library"] == lib for l in results):
                 results.append(cleaned_lib)
-    # print(results)
+    logger.debug(results)
     return results
 
 
@@ -128,9 +129,9 @@ async def process_raw(raw_data: str):
     logger.debug(raw_data)
 
     new_req: list = []
-    pattern = "^[a-zA-Z]"
+    pattern = "^[a-zA-Z0-9]"
     for r in req_list:
-        if re.match(r"^[a-zA-Z]", r):
+        if re.match(pattern, r):
             new_req.append(r)
             logger.info(f"library: {r}")
         else:
@@ -140,8 +141,6 @@ async def process_raw(raw_data: str):
 
 async def main(raw_data: str, host_ip: str):
     request_group_id = uuid.uuid4()
-    # store incoming data
-
     # process raw data
     req_list: list = await process_raw(raw_data=raw_data)
     # clean data

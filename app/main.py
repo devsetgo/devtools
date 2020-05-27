@@ -29,6 +29,7 @@ routes = [
         endpoint=pypi_pages.pypi_result,
         methods=["GET", "POST"],
     ),
+    Mount("/pypi/process",pypi_pages.pypi_process_stream),
     Mount("/static", app=StaticFiles(directory="statics"), name="static"),
 ]
 

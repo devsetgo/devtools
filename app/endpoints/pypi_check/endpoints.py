@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import uuid
 from datetime import datetime
-
+from starlette.requests import Request
 from loguru import logger
-from starlette.responses import RedirectResponse
+from starlette.responses import RedirectResponse,StreamingResponse
 from starlette_wtf import csrf_protect
 
 from endpoints.pypi_check import forms
@@ -11,7 +11,7 @@ from endpoints.pypi_check import pypi_calls  # import main, process_raw
 from endpoints.pypi_check.crud import get_request_group_id
 from endpoints.pypi_check.crud import store_in_data
 from resources import templates
-
+import asyncio
 
 base: str = "pypi"
 
@@ -19,7 +19,6 @@ base: str = "pypi"
 @csrf_protect
 async def pypi_index(request):
 
-    test_id = uuid.uuid4()
     host_ip = request.client.host
     form = await forms.RequirementsForm.from_formdata(request)
     form_data = await request.form()
@@ -60,7 +59,7 @@ async def pypi_index(request):
     status_code = 200
     template = f"/{base}/pypi_new.html"
     context = {"request": request, "form": form}
-    logger.info(f"page accessed: /pypi/")
+    logger.info("page accessed: /pypi/")
     return templates.TemplateResponse(template, context, status_code=status_code)
 
 
@@ -72,10 +71,30 @@ async def pypi_result(request):
 
     template = f"/{base}/result.html"
     context = {"request": request, "data": data}
-    logger.info(f"page accessed: /pypi/")
+    logger.info("page accessed: /pypi/")
     return templates.TemplateResponse(template, context)
 
 
-async def progress(request_group_id):
-    p = 10
-    return p
+async def pypi_process_stream(scope, receive, send):
+
+    # request_group_id = request.path_params["page"]
+
+    assert scope['type'] == 'http'
+    # request = Request(scope, receive, send)
+    generator = slow_numbers(1, 10)
+    response = StreamingResponse(generator, media_type='text/html')
+    await response(scope, receive, send)
+
+async def slow_numbers(minimum, maximum):
+    yield('<html><body><ul>')
+    for number in range(minimum, maximum + 1):
+        yield '<li>%d</li>' % number
+        await asyncio.sleep(0.5)
+    yield('</ul></body></html>')
+
+
+# async def app(scope, receive, send):
+#     assert scope['type'] == 'http'
+#     generator = slow_numbers(1, 10)
+#     response = StreamingResponse(generator, media_type='text/html')
+#     await response(scope, receive, send)
