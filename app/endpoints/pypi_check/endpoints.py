@@ -53,6 +53,7 @@ async def pypi_index(request):
         # request_group_id = await main(raw_data=text_in, host_ip=host_ip)
 
         logger.info("Redirecting user to index page /")
+        
         return RedirectResponse(
             url=f"/pypi/results/{str(request_group_id)}", status_code=303
         )
@@ -75,22 +76,22 @@ async def pypi_result(request):
     return templates.TemplateResponse(template, context)
 
 
-async def pypi_process_stream(scope, receive, send):
+# async def pypi_process_stream(scope, receive, send):
 
-    # request_group_id = request.path_params["page"]
+#     # request_group_id = request.path_params["page"]
 
-    assert scope['type'] == 'http'
-    # request = Request(scope, receive, send)
-    generator = slow_numbers(1, 10)
-    response = StreamingResponse(generator, media_type='text/html')
-    await response(scope, receive, send)
+#     assert scope['type'] == 'http'
+#     # request = Request(scope, receive, send)
+#     generator = slow_numbers(1, 10)
+#     response = StreamingResponse(generator, media_type='text/html')
+#     await response(scope, receive, send)
 
-async def slow_numbers(minimum, maximum):
-    yield('<html><body><ul>')
-    for number in range(minimum, maximum + 1):
-        yield '<li>%d</li>' % number
-        await asyncio.sleep(0.5)
-    yield('</ul></body></html>')
+# async def slow_numbers(minimum, maximum):
+#     # yield('{% extends "/pypi/processing.html" %}{% block stream %}')
+#     for number in range(minimum, maximum + 1):
+#         yield '<li>%d</li>' % number
+#         await asyncio.sleep(0.5)
+#     # yield('{% endblock %}')
 
 
 # async def app(scope, receive, send):
