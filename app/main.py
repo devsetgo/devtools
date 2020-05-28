@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-from typing import Dict, Any, List
+from typing import Any
+from typing import Dict
+
 from starlette.applications import Starlette
 from starlette.middleware import Middleware
 from starlette.middleware.sessions import SessionMiddleware
@@ -16,9 +18,8 @@ from endpoints.main import endpoints as main_pages
 from endpoints.pypi_check import endpoints as pypi_pages
 from resources import init_app
 
-
 routes = [
-    Route("/", endpoint=main_pages.index, methods=["GET"]),
+    Route("/", endpoint=main_pages.homepage, methods=["GET"]),
     Route("/index", endpoint=main_pages.index, methods=["GET"]),
     Route("/about", endpoint=main_pages.about_page, methods=["GET"]),
     Route("/health", endpoint=health_pages.health_status, methods=["GET"]),
@@ -28,6 +29,7 @@ routes = [
         endpoint=pypi_pages.pypi_result,
         methods=["GET", "POST"],
     ),
+    # Mount("/pypi/process",pypi_pages.pypi_process_stream),
     Mount("/static", app=StaticFiles(directory="statics"), name="static"),
 ]
 

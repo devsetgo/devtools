@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
-from loguru import logger
-from starlette.exceptions import HTTPException
-from starlette.responses import RedirectResponse
+import uuid
 from datetime import datetime
-from endpoints.pypi_check import forms
-from resources import templates
+from starlette.requests import Request
+from loguru import logger
+from starlette.responses import RedirectResponse,StreamingResponse
 from starlette_wtf import csrf_protect
+
+from endpoints.pypi_check import forms
 from endpoints.pypi_check import pypi_calls  # import main, process_raw
 from endpoints.pypi_check.crud import get_request_group_id
-import uuid
 from endpoints.pypi_check.crud import store_in_data
-from tqdm import tqdm, tqdm_gui
+from resources import templates
+import asyncio
 
 base: str = "pypi"
 
@@ -18,12 +19,11 @@ base: str = "pypi"
 @csrf_protect
 async def pypi_index(request):
 
-    test_id = uuid.uuid4()
     host_ip = request.client.host
     form = await forms.RequirementsForm.from_formdata(request)
     form_data = await request.form()
     if form.validate_on_submit():
-
+        logger.critical(form_data)
         logger.info(form_data["requirements"])
         requirements_str = form_data["requirements"]
         raw_data: str = requirements_str
@@ -53,13 +53,14 @@ async def pypi_index(request):
         # request_group_id = await main(raw_data=text_in, host_ip=host_ip)
 
         logger.info("Redirecting user to index page /")
+        
         return RedirectResponse(
             url=f"/pypi/results/{str(request_group_id)}", status_code=303
         )
     status_code = 200
     template = f"/{base}/pypi_new.html"
     context = {"request": request, "form": form}
-    logger.info(f"page accessed: /pypi/")
+    logger.info("page accessed: /pypi/")
     return templates.TemplateResponse(template, context, status_code=status_code)
 
 
@@ -71,10 +72,30 @@ async def pypi_result(request):
 
     template = f"/{base}/result.html"
     context = {"request": request, "data": data}
-    logger.info(f"page accessed: /pypi/")
+    logger.info("page accessed: /pypi/")
     return templates.TemplateResponse(template, context)
 
 
-async def progress(request_group_id):
-    p = 10
-    return p
+# async def pypi_process_stream(scope, receive, send):
+
+#     # request_group_id = request.path_params["page"]
+
+#     assert scope['type'] == 'http'
+#     # request = Request(scope, receive, send)
+#     generator = slow_numbers(1, 10)
+#     response = StreamingResponse(generator, media_type='text/html')
+#     await response(scope, receive, send)
+
+# async def slow_numbers(minimum, maximum):
+#     # yield('{% extends "/pypi/processing.html" %}{% block stream %}')
+#     for number in range(minimum, maximum + 1):
+#         yield '<li>%d</li>' % number
+#         await asyncio.sleep(0.5)
+#     # yield('{% endblock %}')
+
+
+# async def app(scope, receive, send):
+#     assert scope['type'] == 'http'
+#     generator = slow_numbers(1, 10)
+#     response = StreamingResponse(generator, media_type='text/html')
+#     await response(scope, receive, send)

@@ -4,9 +4,9 @@ set -x
 
 # mkdocs
 mkdocs build
-
+CUR_DIR=$(pwd)
 # Copy Contribute to Github Contributing
-cp ~/twitter_star_task_service/docs/index.md ~/twitter_star_task_service/README.md
+cp $CUR_DIR/docs/index.md $CUR_DIR/README.md
 
 
 mkdocs gh-deploy

@@ -1,0 +1,12 @@
+aiomysql
+aiosqlite
+asyncpg
+cassandra-driver
+cx-Oracle
+Cython
+databases
+elastic-apm
+fastapi[all]
+httpx
+pymongo
+zeebe-grpc
