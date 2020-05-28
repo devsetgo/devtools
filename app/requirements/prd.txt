@@ -1,7 +1,7 @@
 aiosqlite==0.13.0 # previous version 0.12.0
 databases==0.3.2
 gunicorn==20.0.4
-httpx==0.13.1 # previous version 0.12.1
+httpx==0.13.2 # previous version 0.12.1
 loguru==0.5.0
 starlette==0.13.4
 starlette-wtf==0.2.2
