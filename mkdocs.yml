@@ -1,0 +1,53 @@
+# site_name: Pip_Checker
+# Project information
+site_name: 'Pip_Checker'
+site_description: 'A simple tool to update requirements using Starlette and HTTPX.'
+site_author: 'Mike Ryan'
+# site_url: 'https://squidfunk.github.io/mkdocs-material/'
+# Repository
+repo_name: 'devsetgo/pip-checker'
+repo_url: 'https://github.com/devsetgo/pip-checker'
+
+# Copyright
+copyright: 'Copyright &copy; 2016 - 2020 Mike Ryan'
+
+nav:
+    - Introduction: 'index.md'
+    - Contributing: 'contribute.md'
+
+
+
+# Theme
+theme:
+  name: 'material'
+  palette:
+    primary: 'indigo'
+    accent: 'red'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  icon:
+    logo: material/cloud
+  language: 'en'
+  plugins:
+  - search
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
+      lang:
+        - en
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/devsetgo
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/stuxstu
