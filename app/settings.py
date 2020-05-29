@@ -50,13 +50,14 @@ if USE_ENV.lower() == "dotenv":
     )
     # set release environment settings
     RELEASE_ENV = config("RELEASE_ENV", default="prd")
-
     # Safety check to prevent debug mode or mocking in production
     if RELEASE_ENV == "prd":
         DEBUG = False
+        DEMO_DATA_CREATE = False
     else:
         DEBUG = config("DEBUG", default=False)
-
+        DEMO_DATA_CREATE_value = config("DEMO_DATA_CREATE", default=False)
+        DEMO_DATA_CREATE = bool(DEMO_DATA_CREATE_value)
     # Sendgrid
     SENDGRID_API_KEY = config("SENDGRID_API_KEY", default="none")
     # Loguru settings
@@ -76,9 +77,11 @@ else:
     # Safety check to prevent debug mode or mocking in production
     if RELEASE_ENV == "prd":
         DEBUG = False
+        DEMO_DATA_CREATE = False
     else:
         DEBUG = bool(os.environ["DEBUG"])
-
+        DEMO_DATA_CREATE_value = os.environ["DEMO_DATA_CREATE"]
+        DEMO_DATA_CREATE = bool(DEMO_DATA_CREATE_value)
     # Sendgrid
     SENDGRID_API_KEY = os.environ["SENDGRID_API_KEY"]
     # Loguru settings

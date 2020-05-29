@@ -3,7 +3,7 @@ import uuid
 from datetime import datetime
 from starlette.requests import Request
 from loguru import logger
-from starlette.responses import RedirectResponse,StreamingResponse
+from starlette.responses import RedirectResponse, StreamingResponse
 from starlette_wtf import csrf_protect
 
 from endpoints.pypi_check import forms
@@ -53,7 +53,7 @@ async def pypi_index(request):
         # request_group_id = await main(raw_data=text_in, host_ip=host_ip)
 
         logger.info("Redirecting user to index page /")
-        
+
         return RedirectResponse(
             url=f"/pypi/results/{str(request_group_id)}", status_code=303
         )

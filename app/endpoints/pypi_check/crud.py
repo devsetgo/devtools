@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 import uuid
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from loguru import logger
 
 from com_lib import crud_ops
 from com_lib.db_setup import libraries
 from com_lib.db_setup import requirements
+import settings
+import random
+import time
 
 
 async def store_in_data(store_values: dict):
@@ -20,6 +23,12 @@ async def store_in_data(store_values: dict):
 
 async def store_lib_request(json_data: dict, request_group_id: str):
 
+    if settings.DEMO_DATA_CREATE == True:
+        negative_days = random.randint(1, 900)
+        now = datetime.today() - timedelta(days=negative_days)
+    else:
+        now = datetime.now()
+
     query = libraries.insert()
     values = {
         "id": str(uuid.uuid4()),
@@ -27,7 +36,7 @@ async def store_lib_request(json_data: dict, request_group_id: str):
         "library": json_data["library"],
         "currentVersion": json_data["currentVersion"],
         "newVersion": json_data["newVersion"],
-        "dated_created": datetime.now(),
+        "dated_created": now,
     }
     await crud_ops.execute_one_db(query=query, values=values)
     logger.info(f"created request_group_id: {request_group_id}")
