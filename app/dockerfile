@@ -8,6 +8,10 @@ WORKDIR /app
 ENV USE_ENV='docker'
 # Application information
 ENV APP_VERSION='1.0.0'
+# Add Demo Data
+ENV DEMO_DATA_CREATE=False
+# how many loops of requests
+ENV DEMO_DATA_LOOPS=0
 #This should be false for production
 ENV DEBUG=False
 #prd for production or 'dev' for development
