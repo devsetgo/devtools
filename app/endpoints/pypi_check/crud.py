@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
+import random
 import uuid
-from datetime import datetime, timedelta
+from datetime import datetime
+from datetime import timedelta
 
 from loguru import logger
 
+import settings
 from com_lib import crud_ops
 from com_lib.db_setup import libraries
 from com_lib.db_setup import requirements
-import settings
-import random
-import time
 
 
 def get_date():

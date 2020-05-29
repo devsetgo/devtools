@@ -6,7 +6,6 @@ from loguru import logger
 
 import settings
 
-
 engine = sqlalchemy.create_engine(
     settings.SQLALCHEMY_DATABASE_URI,
     poolclass=sqlalchemy.pool.QueuePool,

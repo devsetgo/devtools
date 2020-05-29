@@ -12,8 +12,8 @@ from starlette_wtf import CSRFProtectMiddleware
 
 import resources
 import settings
-
-from com_lib import exceptions, logging_config
+from com_lib import exceptions
+from com_lib import logging_config
 from endpoints.health import endpoints as health_pages
 from endpoints.main import endpoints as main_pages
 from endpoints.pypi_check import endpoints as pypi_pages

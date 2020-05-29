@@ -22,15 +22,18 @@
 # "host_ip" String
 # "dated_created" DateTime
 
-import uuid
-from endpoints.pypi_check import pypi_calls
-from endpoints.pypi_check.crud import store_in_data
-from datetime import datetime, timedelta
-from loguru import logger
 import random
 import time
+import uuid
+from datetime import datetime
+from datetime import timedelta
+
+from loguru import logger
 from tqdm import tqdm
+
 import settings
+from endpoints.pypi_check import pypi_calls
+from endpoints.pypi_check.crud import store_in_data
 
 
 async def make_a_lot_of_calls():

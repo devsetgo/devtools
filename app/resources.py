@@ -3,10 +3,10 @@ from loguru import logger
 from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 
+import settings
 from com_lib import db_setup
 from com_lib.db_setup import create_db
 from com_lib.demo_data import make_a_lot_of_calls
-import settings
 from endpoints.main.crud import get_data
 
 # templates and static files
