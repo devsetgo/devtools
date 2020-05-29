@@ -16,8 +16,10 @@ SonarCloud:
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=devsetgo_pip-checker&metric=bugs)](https://sonarcloud.io/dashboard?id=devsetgo_pip-checker)
 
 
-# Pypi Requirements Checker
+# Dev Tools
 I got tired of trying to check if there is a new version of a library for projects. So I created a way to drop my requirements.txt into a box and then call Pypi to get the lastest version.
+
+I will add more tools.
 
 ### Notes
 Python 3.8 or higher

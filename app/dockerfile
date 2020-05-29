@@ -18,7 +18,6 @@ ENV DEBUG=False
 ENV RELEASE_ENV='dev'
 ENV SQLALCHEMY_DATABASE_URI='sqlite:///sqlite_db/api.db'
 # postgresql://user:pass@localhost:5432/my_db
-
 # Loguru settings
 ENV LOGURU_RETENTION='10 days'
 ENV LOGURU_ROTATION='100 MB'
