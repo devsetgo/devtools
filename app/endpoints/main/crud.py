@@ -27,7 +27,7 @@ async def process_by_month(data: dict) -> dict:
             result[ym] = 1
         else:
             result[ym] += 1
-            
+
     logger.debug(result)
     return result
 

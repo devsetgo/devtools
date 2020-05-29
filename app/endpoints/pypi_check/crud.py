@@ -13,7 +13,7 @@ import time
 
 
 def get_date():
-    if settings.DEMO_DATA_CREATE == True:
+    if settings.DEMO_DATA_CREATE == "True":
         negative_days = random.randint(1, 400)
         result = datetime.today() - timedelta(days=negative_days)
     else:

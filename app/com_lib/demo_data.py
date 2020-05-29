@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # TODO #299
 # create demo data
 
@@ -30,6 +31,7 @@ import random
 import time
 from tqdm import tqdm
 import settings
+
 
 async def make_a_lot_of_calls():
     t0 = time.time()

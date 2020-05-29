@@ -7,6 +7,7 @@ from com_lib import db_setup
 from com_lib.db_setup import create_db
 from com_lib.demo_data import make_a_lot_of_calls
 import settings
+from endpoints.main.crud import get_data
 
 # templates and static files
 templates = Jinja2Templates(directory="templates")
@@ -18,10 +19,17 @@ async def startup():
     logger.info("starting up services")
     await db_setup.connect_db()
 
-    if settings.DEMO_DATA_CREATE == True:
-        logger.info("Creating Demo Data")
-
-    await make_a_lot_of_calls()
+    if settings.DEMO_DATA_CREATE == "True":
+        logger.warning("Checking data history")
+        data = await get_data()
+        if len(data) == 0:
+            logger.warning("Creation of Demo Data")
+            await make_a_lot_of_calls()
+            logger.warning("Completion of Demo Data")
+        else:
+            logger.warning(
+                "Exiting Data in the database, please set DEMO_DATA_CREATE to False"
+            )
 
 
 async def shutdown():

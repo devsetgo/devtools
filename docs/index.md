@@ -36,15 +36,15 @@ Python 3.8 or higher
   - Windows: pip install -r requirements.txt
 - Place **your* requirements.txt in the data folder
 - Run application
-  - Linux: 
+  - Linux:
   ```console
   $ ./scripts/dev_run.sh
   ```
-  - Windows: 
+  - Windows:
   ```console
   uvicorn main:app --port 5000 --reload
   ```
-  - Docker: 
+  - Docker:
   ```console
   $ docker run mikeryan56 pypi-checker:latest
     ```
