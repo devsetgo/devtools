@@ -12,6 +12,15 @@ import random
 import time
 
 
+def get_date():
+    if settings.DEMO_DATA_CREATE == True:
+        negative_days = random.randint(1, 400)
+        result = datetime.today() - timedelta(days=negative_days)
+    else:
+        result = datetime.now()
+    return result
+
+
 async def store_in_data(store_values: dict):
 
     query = requirements.insert()
@@ -23,12 +32,7 @@ async def store_in_data(store_values: dict):
 
 async def store_lib_request(json_data: dict, request_group_id: str):
 
-    if settings.DEMO_DATA_CREATE == True:
-        negative_days = random.randint(1, 900)
-        now = datetime.today() - timedelta(days=negative_days)
-    else:
-        now = datetime.now()
-
+    now = get_date()
     query = libraries.insert()
     values = {
         "id": str(uuid.uuid4()),

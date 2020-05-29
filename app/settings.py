@@ -58,6 +58,10 @@ if USE_ENV.lower() == "dotenv":
         DEBUG = config("DEBUG", default=False)
         DEMO_DATA_CREATE_value = config("DEMO_DATA_CREATE", default=False)
         DEMO_DATA_CREATE = bool(DEMO_DATA_CREATE_value)
+    # Demo data
+    DEMO_DATA_LOOPS = config("DEMO_DATA_LOOPS", default=0)
+    DEMO_DATA_MAX = config("DEMO_DATA_MAX", default=0)
+
     # Sendgrid
     SENDGRID_API_KEY = config("SENDGRID_API_KEY", default="none")
     # Loguru settings

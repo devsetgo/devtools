@@ -29,7 +29,7 @@ from loguru import logger
 import random
 import time
 from tqdm import tqdm
-
+import settings
 
 async def make_a_lot_of_calls():
     t0 = time.time()
@@ -139,8 +139,8 @@ async def make_a_lot_of_calls():
         "WTForms==2.3.1",
     ]
     max_num = len(requirements_list) - 1
-    for _ in tqdm(range(5)):
-        iter_number: int = random.randint(1, 10)
+    for _ in tqdm(range(int(settings.DEMO_DATA_LOOPS))):
+        iter_number: int = random.randint(1, 25)
 
         process_str: str = ""
         for _ in range(iter_number):

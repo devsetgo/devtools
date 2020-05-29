@@ -97,7 +97,10 @@
         <!-- /.card -->
       </div>
     </div><!-- /.row -->
+    <ul>
+      {% for key, value in data.lib_data_month|dictsort(reverse=true) %}<li>{{key}}:{{value}}</li>{% endfor %}
 
+    </ul>
   </div>
   <!-- /.container-fluid -->
 </div>
@@ -131,12 +134,12 @@
       var pypiMonthChart  = new Chart($pypiMonthChart, {
         type   : 'bar',
         data   : {
-          labels  : [{% for key, value in data.lib_data_month.items() %}'{{key}}',{% endfor %}],
+          labels  : [{% for key, value in data.lib_data_month|dictsort(reverse=true) %}'{{key}}',{% endfor %}],
           datasets: [
             {
               backgroundColor: '#007bff',
               borderColor    : '#007bff',
-              data           : [{% for key, value in data.lib_data_month.items() %}'{{value}}',{% endfor %}]
+              data           : [{% for key, value in data.lib_data_month|dictsort(reverse=true) %}'{{value}}',{% endfor %}]
             },
 
           ]
