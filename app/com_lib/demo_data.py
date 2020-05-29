@@ -139,7 +139,7 @@ async def make_a_lot_of_calls():
         "WTForms==2.3.1",
     ]
     max_num = len(requirements_list) - 1
-    for _ in tqdm(range(50)):
+    for _ in tqdm(range(5)):
         iter_number: int = random.randint(1, 10)
 
         process_str: str = ""
