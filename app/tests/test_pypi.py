@@ -1,30 +1,30 @@
 # -*- coding: utf-8 -*-
-import unittest
+import uuid
+
+import pytest
 
 # from starlette.testclient import TestClient
 from async_asgi_testclient import TestClient as Async_TestClient
+
 from main import app
 
-client = Async_TestClient(app)
 
+@pytest.mark.asyncio
+async def test_pypi():
 
-class Test(unittest.TestCase):
-    async def test_home(self):
+    async with Async_TestClient(app) as client:
+
+        # async def test_home(self):
 
         url = f"/pypi"
         response = await client.get(url)
         assert response.status_code == 200
 
-    # async def test_index(self):
 
-    #     url = f"/index"
-    #     response = await client.get(url)
-    #     # assert response.status_code == 200
-    #     assert response.status_code == 200
-    #     # assert "X-Process-Time" in response.headers
-
-    # async def test_index__error(self):
-    #     uid = uuid.uuid1()
-    #     url = f"/{uid}"
-    #     response = await client.get(url)
-    #     assert response.status_code == 404
+@pytest.mark.asyncio
+async def test_pypi_error():
+    client = Async_TestClient(app)
+    uid = uuid.uuid1()
+    url = f"/pypi/{uid}"
+    response = await client.get(url)
+    assert response.status_code == 404

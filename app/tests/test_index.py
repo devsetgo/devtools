@@ -1,32 +1,53 @@
 # -*- coding: utf-8 -*-
-import unittest
 import uuid
+
+import pytest
 
 # from starlette.testclient import TestClient
 from async_asgi_testclient import TestClient as Async_TestClient
+
 from main import app
 
-client = Async_TestClient(app)
+# client = Async_TestClient(app)
 
 
-class Test(unittest.TestCase):
-    async def test_home(self):
+# class Test(unittest.TestCase):
+@pytest.mark.asyncio
+async def test_home():
+
+    async with Async_TestClient(app) as client:
 
         url = f"/"
         response = await client.get(url)
-        assert response.status_code == 303
-        # assert "X-Process-Time" in response.headers
+        assert response.status_code == 200
 
-    async def test_index(self):
+
+@pytest.mark.asyncio
+async def test_index():
+
+    async with Async_TestClient(app) as client:
 
         url = f"/index"
         response = await client.get(url)
-        # assert response.status_code == 200
         assert response.status_code == 200
-        # assert "X-Process-Time" in response.headers
 
-    async def test_index__error(self):
+
+@pytest.mark.asyncio
+async def test_index_error():
+
+    async with Async_TestClient(app) as client:
+
         uid = uuid.uuid1()
         url = f"/{uid}"
         response = await client.get(url)
         assert response.status_code == 404
+
+
+@pytest.mark.asyncio
+async def test_about():
+
+    async with Async_TestClient(app) as client:
+
+        url = f"/about"
+        response = await client.get(url)
+        assert response.status_code == 200
