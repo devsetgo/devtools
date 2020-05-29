@@ -5,15 +5,15 @@ Python:
 
 CI/CD Pipeline:
 
-[![codecov](https://codecov.io/gh/devsetgo/pip-checker/branch/master/graph/badge.svg)](https://codecov.io/gh/devsetgo/pip-checker)
-[![Actions Status](https://github.com/devsetgo/pip-checker/workflows/PythonPackage/badge.svg)](https://github.com/devsetgo/pip-checker/actions)
+[![codecov](https://codecov.io/gh/devsetgo/devtools/branch/master/graph/badge.svg)](https://codecov.io/gh/devsetgo/devtools)
+[![Actions Status](https://github.com/devsetgo/devtools/workflows/PythonPackage/badge.svg)](https://github.com/devsetgo/devtools/actions)
 
 SonarCloud:
 
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=devsetgo_pip-checker&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=devsetgo_pip-checker)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=devsetgo_pip-checker&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=devsetgo_pip-checker)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=devsetgo_pip-checker&metric=alert_status)](https://sonarcloud.io/dashboard?id=devsetgo_pip-checker)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=devsetgo_pip-checker&metric=bugs)](https://sonarcloud.io/dashboard?id=devsetgo_pip-checker)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=devsetgo_devtools&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=devsetgo_devtools)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=devsetgo_devtools&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=devsetgo_devtools)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=devsetgo_devtools&metric=alert_status)](https://sonarcloud.io/dashboard?id=devsetgo_devtools)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=devsetgo_devtools&metric=bugs)](https://sonarcloud.io/dashboard?id=devsetgo_devtools)
 
 
 # Pypi Requirements Checker
@@ -23,7 +23,7 @@ I got tired of trying to check if there is a new version of a library for projec
 Python 3.8 or higher
 
 ## How to User
-- git clone https://github.com/devsetgo/pip-checker.git
+- git clone https://github.com/devsetgo/devtools.git
 - create virtual environment
   - Linux: python3 -m venv env
   - Windows: virtualenv env
