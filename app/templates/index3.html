@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block page_title %}| Pypi Dashboard{% endblock %}
+{% block page_title %}| Dashboard{% endblock %}
 {% block page_stylesheet %}
 
 {% endblock %}
-{% block page_breadcrumb %} Pypi Dashboard{% endblock %}
-{% block page_head_title %}Pypi Dashboard{% endblock %}
+{% block page_breadcrumb %} Dashboard{% endblock %}
+{% block page_head_title %}Dashboard{% endblock %}
 {% block body %}
 <!-- Main content -->
 <div class="content">
@@ -38,15 +38,15 @@
               <canvas id="pypi-month-chart" height="200"></canvas>
             </div>
 
-            <div class="d-flex flex-row justify-content-end">
-              <span class="mr-2">
+            <!-- <div class="d-flex flex-row justify-content-end"> -->
+              <!-- <span class="mr-2">
                 <i class="fas fa-square text-primary"></i> This year
-              </span>
+              </span> -->
 
               <!-- <span>
                 <i class="fas fa-square text-gray"></i> Last year
               </span> -->
-            </div>
+            <!-- </div> -->
           </div>
         </div>
         <!-- /.card -->
@@ -97,10 +97,6 @@
         <!-- /.card -->
       </div>
     </div><!-- /.row -->
-    <ul>
-      {% for key, value in data.lib_data_month|dictsort(reverse=true) %}<li>{{key}}:{{value}}</li>{% endfor %}
-
-    </ul>
   </div>
   <!-- /.container-fluid -->
 </div>
