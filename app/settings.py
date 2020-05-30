@@ -61,8 +61,6 @@ if USE_ENV.lower() == "dotenv":
     # Demo data
     DEMO_DATA_LOOPS = config("DEMO_DATA_LOOPS", default=0)
 
-    # Sendgrid
-    SENDGRID_API_KEY = config("SENDGRID_API_KEY", default="none")
     # Loguru settings
     LOGURU_RETENTION = config("LOGURU_RETENTION", default="10 days")
     LOGURU_ROTATION = config("LOGURU_ROTATION", default="10 MB")
@@ -87,8 +85,6 @@ else:
 
     # Demo data
     DEMO_DATA_LOOPS = os.environ["DEMO_DATA_LOOPS"]
-    # Sendgrid
-    SENDGRID_API_KEY = os.environ["SENDGRID_API_KEY"]
     # Loguru settings
     LOGURU_RETENTION = os.environ["LOGURU_RETENTION"]
     LOGURU_ROTATION = os.environ["LOGURU_ROTATION"]
