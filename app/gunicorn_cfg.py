@@ -16,8 +16,8 @@ bind = "0.0.0.0:5000"
 # BODY: APScheduler has conflicts if more than 1 gunicorn worker is enabled.
 
 # define number of workers by cores times two plus one
-# workers = multiprocessing.cpu_count() * 2 + 1
-workers = 4
+workers = multiprocessing.cpu_count() * 2 + 1
+# workers = 4
 # set worker class to uvicorn
 worker_class = "uvicorn.workers.UvicornWorker"
 # loglevel - The granularity of log output
