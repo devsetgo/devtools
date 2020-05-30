@@ -3,16 +3,15 @@ networks:
   web:
     external: true
 services:
-  twitterstar:
+  devtools:
     # build: ./app
-    image: mikeryan56/twitterstar:1.0.0
-    # image: mikeryan56/twitterstar:latest
+    image: mikeryan56/devtools:1.0.0
+    # image: mikeryan56/devtools:latest
     restart: always
     ports:
     - "5000"
     volumes:
     - .:/code
-
 
     environment:
     # Application information
@@ -23,19 +22,21 @@ services:
     - RELEASE_ENV='dev'
     - SQLALCHEMY_DATABASE_URI='sqlite:///sqlite_db/api.db'
     # postgresql://user:pass@localhost:5432/my_db
-    # send grid
-    - SENDGRID_API_KEY='insert-key'
     # Loguru settings
     - LOGURU_RETENTION='10 days'
     - LOGURU_ROTATION='100 MB'
     # Values NOTSET, DEBUG, INFO, WARNING, ERROR, CRITICAL
     - LOGURU_LOGGING_LEVEL='INFO'
+    # Add Demo Data
+    - DEMO_DATA_CREATE=False
+    # how many loops of requests
+    - DEMO_DATA_LOOPS=0
     #if using traefik
     labels:
     - "traefik.enable=true"
-    - "traefik.http.routers.twitterstar.rule=Host(`twitterstar.devsetgo.com`)"
-    - "traefik.http.routers.twitterstar.entrypoints=websecure"
-    - "traefik.http.routers.twitterstar.tls.certresolver=mytlschallenge"
+    - "traefik.http.routers.devtools.rule=Host(`devtools.devsetgo.com`)"
+    - "traefik.http.routers.devtools.entrypoints=websecure"
+    - "traefik.http.routers.devtools.tls.certresolver=mytlschallenge"
     networks:
       - web
 

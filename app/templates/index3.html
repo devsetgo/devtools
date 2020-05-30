@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block page_title %}| Dashboard v3{% endblock %}
+{% block page_title %}| Pypi Dashboard{% endblock %}
 {% block page_stylesheet %}
 
 {% endblock %}
-{% block page_breadcrumb %} Dashboard v3{% endblock %}
-{% block page_head_title %}Dashboard v3{% endblock %}
+{% block page_breadcrumb %} Pypi Dashboard{% endblock %}
+{% block page_head_title %}Pypi Dashboard{% endblock %}
 {% block body %}
 <!-- Main content -->
 <div class="content">
@@ -25,12 +25,12 @@
                 <span class="text-bold text-lg">{{data.lib_sum}}</span>
                 <span>Pypi Updates</span>
               </p>
-              <p class="ml-auto d-flex flex-column text-right">
+              <!-- <p class="ml-auto d-flex flex-column text-right">
                 <span class="text-success">
                   <i class="fas fa-arrow-up"></i> 33.1%
                 </span>
                 <span class="text-muted">Since last month</span>
-              </p>
+              </p> -->
             </div>
             <!-- /.d-flex -->
 
@@ -60,22 +60,22 @@
         <div class="card">
           <div class="card-header border-0">
             <div class="d-flex justify-content-between">
-              <h3 class="card-title">Online Store Visitors</h3>
-              <a href="javascript:void(0);">View Report</a>
+              <h3 class="card-title">Top 20 Library</h3>
+
             </div>
           </div>
           <div class="card-body">
             <div class="d-flex">
               <p class="d-flex flex-column">
                 <span class="text-bold text-lg">{{data.lib_data_sum}}</span>
-                <span>Visitors Over Time</span>
+                <span>Count of Library Requests</span>
               </p>
-              <p class="ml-auto d-flex flex-column text-right">
+              <!-- <p class="ml-auto d-flex flex-column text-right">
                 <span class="text-success">
                   <i class="fas fa-arrow-up"></i> 12.5%
                 </span>
                 <span class="text-muted">Since last week</span>
-              </p>
+              </p> -->
             </div>
             <!-- /.d-flex -->
 
@@ -83,7 +83,7 @@
               <canvas id="pypi-lib-chart" height="200"></canvas>
             </div>
 
-            <div class="d-flex flex-row justify-content-end">
+            <!-- <div class="d-flex flex-row justify-content-end">
               <span class="mr-2">
                 <i class="fas fa-square text-primary"></i> This Week
               </span>
@@ -91,12 +91,16 @@
               <span>
                 <i class="fas fa-square text-gray"></i> Last Week
               </span>
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- /.card -->
       </div>
     </div><!-- /.row -->
+    <ul>
+      {% for key, value in data.lib_data_month|dictsort(reverse=true) %}<li>{{key}}:{{value}}</li>{% endfor %}
+
+    </ul>
   </div>
   <!-- /.container-fluid -->
 </div>
@@ -117,25 +121,25 @@
   <script>
     $(function () {
       'use strict'
-    
+
       var ticksStyle = {
         fontColor: '#495057',
         fontStyle: 'bold'
       }
-    
+
       var mode = 'index'
       var intersect = true
-    
+
       var $pypiMonthChart = $('#pypi-month-chart')
       var pypiMonthChart  = new Chart($pypiMonthChart, {
         type   : 'bar',
         data   : {
-          labels  : [{% for key, value in data.lib_data_month.items() %}'{{key}}',{% endfor %}],
+          labels  : [{% for key, value in data.lib_data_month|dictsort(reverse=true) %}'{{key}}',{% endfor %}],
           datasets: [
             {
               backgroundColor: '#007bff',
               borderColor    : '#007bff',
-              data           : [{% for key, value in data.lib_data_month.items() %}'{{value}}',{% endfor %}]
+              data           : [{% for key, value in data.lib_data_month|dictsort(reverse=true) %}'{{value}}',{% endfor %}]
             },
 
           ]
@@ -164,7 +168,7 @@
               },
               ticks    : $.extend({
                 beginAtZero: true,
-    
+
                 // Include a dollar sign in the ticks
                 callback: function (value, index, values) {
                   if (value >= 1000) {
@@ -191,15 +195,15 @@
   <script>
     $(function () {
       'use strict'
-    
+
       var ticksStyle = {
         fontColor: '#495057',
         fontStyle: 'bold'
       }
-    
+
       var mode = 'index'
       var intersect = true
-    
+
       var $pypiLibChart = $('#pypi-lib-chart')
       var pypiLibChart  = new Chart($pypiLibChart, {
         type   : 'bar',
@@ -238,7 +242,7 @@
               },
               ticks    : $.extend({
                 beginAtZero: true,
-    
+
                 // Include a dollar sign in the ticks
                 callback: function (value, index, values) {
                   if (value >= 1000) {
