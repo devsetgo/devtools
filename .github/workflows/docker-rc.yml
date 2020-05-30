@@ -12,7 +12,7 @@ jobs:
         ref: release-candidate
     - name: docker-build
       env:
-        APP_NAME: pypi-checker
+        APP_NAME: devtools
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: |

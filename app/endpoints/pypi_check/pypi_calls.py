@@ -115,7 +115,7 @@ def clean_item(items: list):
                 "bracket_content": bracket_content,
             }
 
-            logger.debug(cleaned_lib['library'])
+            logger.debug(cleaned_lib["library"])
             lib = cleaned_lib["library"]
             if not any(l["library"] == lib for l in results):
                 results.append(cleaned_lib)

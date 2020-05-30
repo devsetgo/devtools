@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import uuid
 from datetime import datetime
-from starlette.requests import Request
+
 from loguru import logger
-from starlette.responses import RedirectResponse,StreamingResponse
+from starlette.responses import RedirectResponse
 from starlette_wtf import csrf_protect
 
 from endpoints.pypi_check import forms
@@ -11,7 +11,6 @@ from endpoints.pypi_check import pypi_calls  # import main, process_raw
 from endpoints.pypi_check.crud import get_request_group_id
 from endpoints.pypi_check.crud import store_in_data
 from resources import templates
-import asyncio
 
 base: str = "pypi"
 
@@ -53,7 +52,7 @@ async def pypi_index(request):
         # request_group_id = await main(raw_data=text_in, host_ip=host_ip)
 
         logger.info("Redirecting user to index page /")
-        
+
         return RedirectResponse(
             url=f"/pypi/results/{str(request_group_id)}", status_code=303
         )

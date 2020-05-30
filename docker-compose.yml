@@ -1,41 +1,42 @@
-version: 3
-networks:
-  web:
-    external: true
+version: "3.3"
+
 services:
-  twitterstar:
-    # build: ./app
-    image: mikeryan56/twitterstar:1.0.0
-    # image: mikeryan56/twitterstar:latest
+  devtools:
+    image: mikeryan56/devtools:20-05-29-rc
     restart: always
     ports:
     - "5000"
     volumes:
     - .:/code
-
-
     environment:
     # Application information
-    - APP_VERSION='1.0.0'
+    - APP_VERSION=1.0.0
     #This should be false for production
     - DEBUG=False
     #prd for production or 'dev' for development
-    - RELEASE_ENV='dev'
-    - SQLALCHEMY_DATABASE_URI='sqlite:///sqlite_db/api.db'
+    - RELEASE_ENV=prd
+    - SQLALCHEMY_DATABASE_URI=sqlite:///sqlite_db/api.db
     # postgresql://user:pass@localhost:5432/my_db
-    # send grid
-    - SENDGRID_API_KEY='insert-key'
     # Loguru settings
-    - LOGURU_RETENTION='10 days'
-    - LOGURU_ROTATION='100 MB'
+    - LOGURU_RETENTION=10 days
+    - LOGURU_ROTATION=100 MB
     # Values NOTSET, DEBUG, INFO, WARNING, ERROR, CRITICAL
-    - LOGURU_LOGGING_LEVEL='INFO'
+    - LOGURU_LOGGING_LEVEL=INFO
+    # Add Demo Data
+    - DEMO_DATA_CREATE=False
+    # how many loops of requests
+    - DEMO_DATA_LOOPS=0
     #if using traefik
     labels:
-    - "traefik.enable=true"
-    - "traefik.http.routers.twitterstar.rule=Host(`twitterstar.devsetgo.com`)"
-    - "traefik.http.routers.twitterstar.entrypoints=websecure"
-    - "traefik.http.routers.twitterstar.tls.certresolver=mytlschallenge"
+    - "traefik.enable=true" # <== Enable traefik to proxy this container
+    - "traefik.http.routers.devtools.rule=Host(`devtools.devsetgo.com`)" # <== Your Domain Name goes here for the http rule
+    - "traefik.http.routers.devtools.entrypoints=web" # <== Defining the entrypoint for http, **ref: line 30
+    - "traefik.http.routers.devtools.middlewares=redirect@file" # <== This is a middleware to redirect to https
+    - "traefik.http.routers.devtools-secured.rule=Host(`devtools.devsetgo.com`)" # <== Your Domain Name for the https rule 
+    - "traefik.http.routers.devtools-secured.entrypoints=web-secured" # <== Defining entrypoint for https, **ref: line 31
+    - "traefik.http.routers.devtools-secured.tls.certresolver=mytlschallenge" # <== Defining certsresolvers for https
     networks:
       - web
-
+networks:
+  web:
+    external: true

@@ -19,14 +19,15 @@ async def process_by_month(data: dict) -> dict:
     """
     Count by month of libraries checked
     """
-    month_list = []
+    result: dict = {}
     for d in data:
         date_item = d["dated_created"]
-        month = date_item.strftime("%b")
-        month_list.append(month)
+        ym = date_item.strftime("%Y-%b")
+        if ym not in result:
+            result[ym] = 1
+        else:
+            result[ym] += 1
 
-    count_obj = collections.Counter(month_list)
-    result: dict = dict(count_obj)
     logger.debug(result)
     return result
 

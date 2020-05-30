@@ -13,10 +13,13 @@ from starlette_wtf import CSRFProtectMiddleware
 import resources
 import settings
 from com_lib import exceptions
+from com_lib import logging_config
 from endpoints.health import endpoints as health_pages
 from endpoints.main import endpoints as main_pages
 from endpoints.pypi_check import endpoints as pypi_pages
-from resources import init_app
+
+logging_config.config_log()
+resources.init_app()
 
 routes = [
     Route("/", endpoint=main_pages.homepage, methods=["GET"]),
@@ -45,8 +48,6 @@ exception_handlers: Dict[Any, Any] = {
     500: exceptions.server_error,
 }
 
-
-init_app()
 
 app = Starlette(
     debug=settings.DEBUG,

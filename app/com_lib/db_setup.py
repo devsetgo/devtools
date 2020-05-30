@@ -4,16 +4,17 @@ import databases
 import sqlalchemy
 from loguru import logger
 
-from settings import SQLALCHEMY_DATABASE_URI
+import settings
 
 engine = sqlalchemy.create_engine(
-    SQLALCHEMY_DATABASE_URI,
+    settings.SQLALCHEMY_DATABASE_URI,
     poolclass=sqlalchemy.pool.QueuePool,
     max_overflow=10,
     pool_size=100,
 )
+
 metadata = sqlalchemy.MetaData()
-database = databases.Database(SQLALCHEMY_DATABASE_URI)
+database = databases.Database(settings.SQLALCHEMY_DATABASE_URI)
 
 
 def create_db():
@@ -32,9 +33,6 @@ async def disconnect_db():
     logger.info("disconnecting from database")
 
 
-# {'library': i['library']
-#                     ,'currentVersion': i['currentVersion']
-#                     ,'newVersion': resp['newVersion']}
 libraries = sqlalchemy.Table(
     "libraries",
     metadata,
