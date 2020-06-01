@@ -22,7 +22,7 @@ def get_date():
 
 
 async def store_in_data(store_values: dict):
-    print(store_values)
+    
     query = requirements.insert()
     await crud_ops.execute_one_db(query=query, values=store_values)
     rgi = store_values["request_group_id"]
