@@ -6,7 +6,8 @@ gunicorn config reference: https://github.com/benoitc/gunicorn/blob/master/examp
 
 
 from settings import LOGURU_LOGGING_LEVEL
-import multiprocessing # noqa
+import multiprocessing  # noqa
+
 # ip and port to bind
 bind = "0.0.0.0:5000"
 # max number of pending connections

@@ -22,7 +22,7 @@ async def startup():
     if settings.DEMO_DATA_CREATE == "True":
         logger.warning("Checking data history")
         data = await get_data()
-        if len(data) == 0:
+        if data["lib_sum"] == 0:
             logger.warning("Creation of Demo Data")
             await make_a_lot_of_calls()
             logger.warning("Completion of Demo Data")
