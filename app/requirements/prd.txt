@@ -1,9 +1,9 @@
 aiosqlite==0.13.0
-databases==0.3.2
+databases [postgresql]==0.3.2
 gunicorn==20.0.4
-httpx==0.13.3 # from 0.13.2
+httpx==0.13.3
 loguru==0.5.0
 starlette [full]==0.13.4
 starlette-wtf==0.2.2
 uvicorn==0.11.5
-tqdm==4.46.0 # from none
+tqdm==4.46.1 # from 4.46.0
