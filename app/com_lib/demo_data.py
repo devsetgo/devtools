@@ -43,7 +43,7 @@ def random_ip_gen():
 
 
 def random_header():
-    {
+    new_header: dict = {
         "host": random_ip_gen(),
         "connection": "keep-alive",
         "upgrade-insecure-requests": "1",
