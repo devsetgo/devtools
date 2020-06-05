@@ -32,7 +32,7 @@ services:
     - "traefik.http.routers.devtools.rule=Host(`devtools.devsetgo.com`)" # <== Your Domain Name goes here for the http rule
     - "traefik.http.routers.devtools.entrypoints=web" # <== Defining the entrypoint for http, **ref: line 30
     - "traefik.http.routers.devtools.middlewares=redirect@file" # <== This is a middleware to redirect to https
-    - "traefik.http.routers.devtools-secured.rule=Host(`devtools.devsetgo.com`)" # <== Your Domain Name for the https rule 
+    - "traefik.http.routers.devtools-secured.rule=Host(`devtools.devsetgo.com`)" # <== Your Domain Name for the https rule
     - "traefik.http.routers.devtools-secured.entrypoints=web-secured" # <== Defining entrypoint for https, **ref: line 31
     - "traefik.http.routers.devtools-secured.tls.certresolver=mytlschallenge" # <== Defining certsresolvers for https
     networks:

@@ -139,7 +139,7 @@ async def process_raw(raw_data: str):
     return new_req
 
 
-async def main(raw_data: str, host_ip: str):
+async def main(raw_data: str, request):
     request_group_id = uuid.uuid4()
     # process raw data
     req_list: list = await process_raw(raw_data=raw_data)
@@ -164,7 +164,8 @@ async def main(raw_data: str, host_ip: str):
         "text_in": raw_data,
         "json_data_in": req_list,
         "json_data_out": fulllist,
-        "host_ip": host_ip,
+        "host_ip": request.client.host,
+        "header_data": dict(request.headers),
         "dated_created": datetime.now(),
     }
     await store_in_data(values)

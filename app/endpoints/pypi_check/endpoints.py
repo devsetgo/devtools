@@ -18,7 +18,6 @@ base: str = "pypi"
 @csrf_protect
 async def pypi_index(request):
 
-    host_ip = request.client.host
     form = await forms.RequirementsForm.from_formdata(request)
     form_data = await request.form()
     if form.validate_on_submit():
@@ -45,7 +44,8 @@ async def pypi_index(request):
             "text_in": raw_data,
             "json_data_in": req_list,
             "json_data_out": fulllist,
-            "host_ip": host_ip,
+            "host_ip": request.client.host,
+            "header_data": dict(request.headers),
             "dated_created": datetime.now(),
         }
         await store_in_data(values)
