@@ -17,7 +17,7 @@ from com_lib import logging_config
 from endpoints.health import endpoints as health_pages
 from endpoints.main import endpoints as main_pages
 from endpoints.pypi_check import endpoints as pypi_pages
-
+from endpoints.modeler import endpoints as modeler_pages
 logging_config.config_log()
 resources.init_app()
 
@@ -26,6 +26,14 @@ routes = [
     Route("/index", endpoint=main_pages.index, methods=["GET"]),
     Route("/about", endpoint=main_pages.about_page, methods=["GET"]),
     Route("/health", endpoint=health_pages.health_status, methods=["GET"]),
+    Mount(
+        "/modeler",
+        routes=[
+            Route("/bpmn/viewer", endpoint=modeler_pages.viewer_bpmn, methods=["GET"]),
+            Route("/bpmn/modeler", endpoint=modeler_pages.modeler_bpmn, methods=["GET","POST"]),
+        ],
+        name="modeler",
+    ),
     Route("/pypi", endpoint=pypi_pages.pypi_index, methods=["GET", "POST"]),
     Route(
         "/pypi/results/{page}",
