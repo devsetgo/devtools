@@ -71,7 +71,7 @@ async def pypi_result(request):
 
     template = f"/{base}/result.html"
     context = {"request": request, "data": data}
-    logger.info("page accessed: /pypi/")
+    logger.info(f"page accessed: /pypi/{request_group_id}")
     return templates.TemplateResponse(template, context)
 
 
