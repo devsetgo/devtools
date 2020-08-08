@@ -56,3 +56,14 @@ requirements = sqlalchemy.Table(
     sqlalchemy.Column("header_data", sqlalchemy.JSON),
     sqlalchemy.Column("dated_created", sqlalchemy.DateTime, index=True),
 )
+
+modeler = sqlalchemy.Table(
+    "modeler",
+    metadata,
+    sqlalchemy.Column("id", sqlalchemy.String, primary_key=True),
+    sqlalchemy.Column("model_type", sqlalchemy.String, index=True),
+    sqlalchemy.Column("json_data_in", sqlalchemy.JSON),
+    sqlalchemy.Column("model", sqlalchemy.BLOB),
+    sqlalchemy.Column("dated_created", sqlalchemy.DateTime, index=True),
+)
+
