@@ -5,8 +5,8 @@ site_description: 'A simple tool to update requirements using Starlette and HTTP
 site_author: 'Mike Ryan'
 # site_url: 'https://squidfunk.github.io/mkdocs-material/'
 # Repository
-repo_name: 'devsetgo/pip-checker'
-repo_url: 'https://github.com/devsetgo/pip-checker'
+repo_name: 'devsetgo/devtools'
+repo_url: 'https://github.com/devsetgo/devtools'
 
 # Copyright
 copyright: 'Copyright &copy; 2016 - 2020 Mike Ryan'
