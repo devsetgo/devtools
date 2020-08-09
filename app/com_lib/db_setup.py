@@ -66,4 +66,3 @@ modeler = sqlalchemy.Table(
     sqlalchemy.Column("model", sqlalchemy.BLOB),
     sqlalchemy.Column("dated_created", sqlalchemy.DateTime, index=True),
 )
-

@@ -9,6 +9,7 @@ from resources import templates
 
 base: str = "modeler_pages"
 
+
 async def viewer_bpmn(request):
     """
     BPM Viewer Page
