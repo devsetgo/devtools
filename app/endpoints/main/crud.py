@@ -48,7 +48,7 @@ async def process_by_month(data: dict) -> dict:
     result: dict = {}
     for d in data:
         date_item = d["dated_created"]
-        ym = date_item.strftime("%Y-%b")
+        ym = date_item.strftime("%Y-%m")
         if ym not in result:
             result[ym] = 1
         else:
