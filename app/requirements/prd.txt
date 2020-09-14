@@ -5,5 +5,5 @@ httpx==0.14.3 # from 0.13.3
 loguru==0.5.2 # from 0.5.0
 starlette[full]==0.13.8 # from 0.13.4
 starlette-wtf==0.2.2
-tqdm==4.48.2 # from 4.46.1
+tqdm==4.49.0 # from 4.46.1
 uvicorn==0.11.8 # from 0.11.7
