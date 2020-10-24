@@ -11,3 +11,4 @@ updates:
     schedule:
       interval: "weekly"
       day: "thursday"
+      # run on thursday each week
