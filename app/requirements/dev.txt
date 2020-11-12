@@ -15,5 +15,5 @@ pylint==2.6.0 # from 2.5.2
 pytest==6.1.2 # from 5.4.3
 pytest-asyncio==0.14.0 # from 0.12.0
 pytest-cov==2.10.1 # from 2.9.0
-requests==2.24.0 # from 2.23.0
+requests==2.25.0 # from 2.23.0
 requests-mock==1.8.0
