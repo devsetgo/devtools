@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump requests from 2.24.0 to 2.25.0 in /app/requirements. PR [#374](https://github.com/devsetgo/devtools/pull/374) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump starlette[full] from 0.13.8 to 0.14.1 in /app/requirements. PR [#372](https://github.com/devsetgo/devtools/pull/372) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mkdocs-material from 6.1.0 to 6.1.2 in /app/requirements. PR [#370](https://github.com/devsetgo/devtools/pull/370) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump aiosqlite from 0.15.0 to 0.16.0 in /app/requirements. PR [#371](https://github.com/devsetgo/devtools/pull/371) by [@dependabot[bot]](https://github.com/apps/dependabot).
