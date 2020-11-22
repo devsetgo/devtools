@@ -8,7 +8,7 @@ coverage==5.3 # from 5.1
 coverage-badge==1.0.1
 flake8==3.8.4 # from 3.8.2
 mkdocs==1.1.2
-mkdocs-material==6.1.4 # from 5.2.2
+mkdocs-material==6.1.5 # from 5.2.2
 mypy==0.790 # from 0.780
 pre-commit==2.8.2 # from 2.4.0
 pylint==2.6.0 # from 2.5.2
