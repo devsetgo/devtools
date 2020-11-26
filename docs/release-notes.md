@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump pre-commit from 2.8.2 to 2.9.2 in /app/requirements. PR [#381](https://github.com/devsetgo/devtools/pull/381) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mkdocs-material from 6.1.4 to 6.1.5 in /app/requirements. PR [#376](https://github.com/devsetgo/devtools/pull/376) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump tqdm from 4.51.0 to 4.52.0 in /app/requirements. PR [#375](https://github.com/devsetgo/devtools/pull/375) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump databases[postgresql] from 0.4.0 to 0.4.1 in /app/requirements. PR [#377](https://github.com/devsetgo/devtools/pull/377) by [@dependabot[bot]](https://github.com/apps/dependabot).
