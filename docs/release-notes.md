@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump tqdm from 4.54.0 to 4.54.1 in /app/requirements. PR [#387](https://github.com/devsetgo/devtools/pull/387) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mkdocs-material from 6.1.6 to 6.1.7 in /app/requirements. PR [#386](https://github.com/devsetgo/devtools/pull/386) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pre-commit from 2.9.2 to 2.9.3 in /app/requirements. PR [#388](https://github.com/devsetgo/devtools/pull/388) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump starlette-wtf from 0.2.2 to 0.3.0 in /app/requirements. PR [#383](https://github.com/devsetgo/devtools/pull/383) by [@dependabot[bot]](https://github.com/apps/dependabot).
