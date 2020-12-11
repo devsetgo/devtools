@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump uvicorn from 0.12.3 to 0.13.0 in /app/requirements. PR [#384](https://github.com/devsetgo/devtools/pull/384) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump bandit from 1.6.2 to 1.6.3 in /app/requirements. PR [#385](https://github.com/devsetgo/devtools/pull/385) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump tqdm from 4.54.0 to 4.54.1 in /app/requirements. PR [#387](https://github.com/devsetgo/devtools/pull/387) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mkdocs-material from 6.1.6 to 6.1.7 in /app/requirements. PR [#386](https://github.com/devsetgo/devtools/pull/386) by [@dependabot[bot]](https://github.com/apps/dependabot).
