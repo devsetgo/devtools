@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump mkdocs-material from 6.1.6 to 6.1.7 in /app/requirements. PR [#386](https://github.com/devsetgo/devtools/pull/386) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pre-commit from 2.9.2 to 2.9.3 in /app/requirements. PR [#388](https://github.com/devsetgo/devtools/pull/388) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump starlette-wtf from 0.2.2 to 0.3.0 in /app/requirements. PR [#383](https://github.com/devsetgo/devtools/pull/383) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump uvicorn from 0.12.2 to 0.12.3 in /app/requirements. PR [#379](https://github.com/devsetgo/devtools/pull/379) by [@dependabot[bot]](https://github.com/apps/dependabot).
