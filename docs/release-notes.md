@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump pytest from 6.1.2 to 6.2.1 in /app/requirements. PR [#390](https://github.com/devsetgo/devtools/pull/390) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump requests from 2.25.0 to 2.25.1 in /app/requirements. PR [#389](https://github.com/devsetgo/devtools/pull/389) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump bandit from 1.6.3 to 1.7.0 in /app/requirements. PR [#392](https://github.com/devsetgo/devtools/pull/392) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump uvicorn from 0.13.0 to 0.13.1 in /app/requirements. PR [#391](https://github.com/devsetgo/devtools/pull/391) by [@dependabot[bot]](https://github.com/apps/dependabot).
