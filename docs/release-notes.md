@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump bandit from 1.6.3 to 1.7.0 in /app/requirements. PR [#392](https://github.com/devsetgo/devtools/pull/392) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump uvicorn from 0.13.0 to 0.13.1 in /app/requirements. PR [#391](https://github.com/devsetgo/devtools/pull/391) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump uvicorn from 0.12.3 to 0.13.0 in /app/requirements. PR [#384](https://github.com/devsetgo/devtools/pull/384) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump bandit from 1.6.2 to 1.6.3 in /app/requirements. PR [#385](https://github.com/devsetgo/devtools/pull/385) by [@dependabot[bot]](https://github.com/apps/dependabot).
