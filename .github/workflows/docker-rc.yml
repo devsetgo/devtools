@@ -2,12 +2,12 @@ name: Docker RC
 on:
   push:
     branches:
-    - release-candidate
+    - main
 jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@mastermain
       with:
         ref: release-candidate
     - name: docker-build

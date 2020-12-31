@@ -9,7 +9,7 @@ jobs:
       matrix:
         python: ['3.8','3.7']
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
     - name: Python ${{ matrix.python }} version
       uses: actions/setup-python@v1
       with:
