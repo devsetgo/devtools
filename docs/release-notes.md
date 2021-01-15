@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump async-asgi-testclient from 1.4.4 to 1.4.5 in /app/requirements. PR [#400](https://github.com/devsetgo/devtools/pull/400) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump tqdm from 4.55.1 to 4.56.0 in /app/requirements. PR [#401](https://github.com/devsetgo/devtools/pull/401) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump tqdm from 4.55.0 to 4.55.1 in /app/requirements. PR [#399](https://github.com/devsetgo/devtools/pull/399) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump uvicorn from 0.13.2 to 0.13.3 in /app/requirements. PR [#398](https://github.com/devsetgo/devtools/pull/398) by [@dependabot[bot]](https://github.com/apps/dependabot).
