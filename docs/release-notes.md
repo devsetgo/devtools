@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump pytest-cov from 2.10.1 to 2.11.1 in /app/requirements. PR [#403](https://github.com/devsetgo/devtools/pull/403) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mkdocs-material from 6.2.4 to 6.2.5 in /app/requirements. PR [#404](https://github.com/devsetgo/devtools/pull/404) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mkdocs-material from 6.2.3 to 6.2.4 in /app/requirements. PR [#402](https://github.com/devsetgo/devtools/pull/402) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump async-asgi-testclient from 1.4.4 to 1.4.5 in /app/requirements. PR [#400](https://github.com/devsetgo/devtools/pull/400) by [@dependabot[bot]](https://github.com/apps/dependabot).
