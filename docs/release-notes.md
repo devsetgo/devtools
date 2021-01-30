@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump mypy from 0.790 to 0.800 in /app/requirements. PR [#406](https://github.com/devsetgo/devtools/pull/406) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump aiosqlite from 0.16.0 to 0.16.1 in /app/requirements. PR [#405](https://github.com/devsetgo/devtools/pull/405) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump coverage from 5.3.1 to 5.4 in /app/requirements. PR [#407](https://github.com/devsetgo/devtools/pull/407) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pre-commit from 2.9.3 to 2.10.0 in /app/requirements. PR [#408](https://github.com/devsetgo/devtools/pull/408) by [@dependabot[bot]](https://github.com/apps/dependabot).
