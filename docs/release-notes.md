@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump starlette[full] from 0.14.1 to 0.14.2 in /app/requirements. PR [#412](https://github.com/devsetgo/devtools/pull/412) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pytest from 6.2.1 to 6.2.2 in /app/requirements. PR [#410](https://github.com/devsetgo/devtools/pull/410) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mypy from 0.790 to 0.800 in /app/requirements. PR [#406](https://github.com/devsetgo/devtools/pull/406) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump aiosqlite from 0.16.0 to 0.16.1 in /app/requirements. PR [#405](https://github.com/devsetgo/devtools/pull/405) by [@dependabot[bot]](https://github.com/apps/dependabot).
