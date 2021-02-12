@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump pre-commit from 2.10.0 to 2.10.1 in /app/requirements. PR [#414](https://github.com/devsetgo/devtools/pull/414) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mkdocs-material from 6.2.6 to 6.2.7 in /app/requirements. PR [#411](https://github.com/devsetgo/devtools/pull/411) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump starlette[full] from 0.14.1 to 0.14.2 in /app/requirements. PR [#412](https://github.com/devsetgo/devtools/pull/412) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pytest from 6.2.1 to 6.2.2 in /app/requirements. PR [#410](https://github.com/devsetgo/devtools/pull/410) by [@dependabot[bot]](https://github.com/apps/dependabot).
