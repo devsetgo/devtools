@@ -10,7 +10,7 @@ flake8==3.8.4 # from 3.8.2
 mkdocs==1.1.2
 mkdocs-material==6.2.7 # from 5.2.2
 mypy==0.800 # from 0.780
-pre-commit==2.10.0 # from 2.4.0
+pre-commit==2.10.1 # from 2.4.0
 pylint==2.6.0 # from 2.5.2
 pytest==6.2.2 # from 5.4.3
 pytest-asyncio==0.14.0 # from 0.12.0
