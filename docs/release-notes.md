@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump tqdm from 4.56.0 to 4.56.2 in /app/requirements. PR [#415](https://github.com/devsetgo/devtools/pull/415) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump autopep8 from 1.5.4 to 1.5.5 in /app/requirements. PR [#416](https://github.com/devsetgo/devtools/pull/416) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pre-commit from 2.10.0 to 2.10.1 in /app/requirements. PR [#414](https://github.com/devsetgo/devtools/pull/414) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mkdocs-material from 6.2.6 to 6.2.7 in /app/requirements. PR [#411](https://github.com/devsetgo/devtools/pull/411) by [@dependabot[bot]](https://github.com/apps/dependabot).
