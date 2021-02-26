@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump aiosqlite from 0.16.1 to 0.17.0 in /app/requirements. PR [#419](https://github.com/devsetgo/devtools/pull/419) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mypy from 0.800 to 0.812 in /app/requirements. PR [#420](https://github.com/devsetgo/devtools/pull/420) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pylint from 2.6.2 to 2.7.1 in /app/requirements. PR [#422](https://github.com/devsetgo/devtools/pull/422) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pylint from 2.6.0 to 2.6.2 in /app/requirements. PR [#418](https://github.com/devsetgo/devtools/pull/418) by [@dependabot[bot]](https://github.com/apps/dependabot).
