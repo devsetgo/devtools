@@ -1,5 +1,28 @@
 # Release Notes
 
+* Bump mkdocs-material from 6.2.8 to 7.0.3 in /app/requirements. PR [#424](https://github.com/devsetgo/devtools/pull/424) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump aiosqlite from 0.16.1 to 0.17.0 in /app/requirements. PR [#419](https://github.com/devsetgo/devtools/pull/419) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump mypy from 0.800 to 0.812 in /app/requirements. PR [#420](https://github.com/devsetgo/devtools/pull/420) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump pylint from 2.6.2 to 2.7.1 in /app/requirements. PR [#422](https://github.com/devsetgo/devtools/pull/422) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump pylint from 2.6.0 to 2.6.2 in /app/requirements. PR [#418](https://github.com/devsetgo/devtools/pull/418) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump tqdm from 4.56.2 to 4.57.0 in /app/requirements. PR [#417](https://github.com/devsetgo/devtools/pull/417) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump mkdocs-material from 6.2.7 to 6.2.8 in /app/requirements. PR [#413](https://github.com/devsetgo/devtools/pull/413) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump tqdm from 4.56.0 to 4.56.2 in /app/requirements. PR [#415](https://github.com/devsetgo/devtools/pull/415) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump autopep8 from 1.5.4 to 1.5.5 in /app/requirements. PR [#416](https://github.com/devsetgo/devtools/pull/416) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump pre-commit from 2.10.0 to 2.10.1 in /app/requirements. PR [#414](https://github.com/devsetgo/devtools/pull/414) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump mkdocs-material from 6.2.6 to 6.2.7 in /app/requirements. PR [#411](https://github.com/devsetgo/devtools/pull/411) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump starlette[full] from 0.14.1 to 0.14.2 in /app/requirements. PR [#412](https://github.com/devsetgo/devtools/pull/412) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump pytest from 6.2.1 to 6.2.2 in /app/requirements. PR [#410](https://github.com/devsetgo/devtools/pull/410) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump mypy from 0.790 to 0.800 in /app/requirements. PR [#406](https://github.com/devsetgo/devtools/pull/406) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump aiosqlite from 0.16.0 to 0.16.1 in /app/requirements. PR [#405](https://github.com/devsetgo/devtools/pull/405) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump coverage from 5.3.1 to 5.4 in /app/requirements. PR [#407](https://github.com/devsetgo/devtools/pull/407) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump pre-commit from 2.9.3 to 2.10.0 in /app/requirements. PR [#408](https://github.com/devsetgo/devtools/pull/408) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump mkdocs-material from 6.2.5 to 6.2.6 in /app/requirements. PR [#409](https://github.com/devsetgo/devtools/pull/409) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump pytest-cov from 2.10.1 to 2.11.1 in /app/requirements. PR [#403](https://github.com/devsetgo/devtools/pull/403) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump mkdocs-material from 6.2.4 to 6.2.5 in /app/requirements. PR [#404](https://github.com/devsetgo/devtools/pull/404) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump mkdocs-material from 6.2.3 to 6.2.4 in /app/requirements. PR [#402](https://github.com/devsetgo/devtools/pull/402) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump async-asgi-testclient from 1.4.4 to 1.4.5 in /app/requirements. PR [#400](https://github.com/devsetgo/devtools/pull/400) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* Bump tqdm from 4.55.1 to 4.56.0 in /app/requirements. PR [#401](https://github.com/devsetgo/devtools/pull/401) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump tqdm from 4.55.0 to 4.55.1 in /app/requirements. PR [#399](https://github.com/devsetgo/devtools/pull/399) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump uvicorn from 0.13.2 to 0.13.3 in /app/requirements. PR [#398](https://github.com/devsetgo/devtools/pull/398) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mkdocs-material from 6.2.2 to 6.2.3 in /app/requirements. PR [#397](https://github.com/devsetgo/devtools/pull/397) by [@dependabot[bot]](https://github.com/apps/dependabot).
