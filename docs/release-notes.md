@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump tqdm from 4.57.0 to 4.58.0 in /app/requirements. PR [#425](https://github.com/devsetgo/devtools/pull/425) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mkdocs-material from 6.2.8 to 7.0.3 in /app/requirements. PR [#424](https://github.com/devsetgo/devtools/pull/424) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump aiosqlite from 0.16.1 to 0.17.0 in /app/requirements. PR [#419](https://github.com/devsetgo/devtools/pull/419) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mypy from 0.800 to 0.812 in /app/requirements. PR [#420](https://github.com/devsetgo/devtools/pull/420) by [@dependabot[bot]](https://github.com/apps/dependabot).
