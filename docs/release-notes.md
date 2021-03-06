@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump tqdm from 4.58.0 to 4.59.0 in /app/requirements. PR [#426](https://github.com/devsetgo/devtools/pull/426) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump httpx from 0.16.1 to 0.17.0 in /app/requirements. PR [#429](https://github.com/devsetgo/devtools/pull/429) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pylint from 2.7.1 to 2.7.2 in /app/requirements. PR [#427](https://github.com/devsetgo/devtools/pull/427) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump coverage from 5.4 to 5.5 in /app/requirements. PR [#430](https://github.com/devsetgo/devtools/pull/430) by [@dependabot[bot]](https://github.com/apps/dependabot).
