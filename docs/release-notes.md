@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump mkdocs-material from 7.0.3 to 7.0.4 in /app/requirements. PR [#428](https://github.com/devsetgo/devtools/pull/428) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump tqdm from 4.58.0 to 4.59.0 in /app/requirements. PR [#426](https://github.com/devsetgo/devtools/pull/426) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump httpx from 0.16.1 to 0.17.0 in /app/requirements. PR [#429](https://github.com/devsetgo/devtools/pull/429) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pylint from 2.7.1 to 2.7.2 in /app/requirements. PR [#427](https://github.com/devsetgo/devtools/pull/427) by [@dependabot[bot]](https://github.com/apps/dependabot).
