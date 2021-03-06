@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump pylint from 2.7.1 to 2.7.2 in /app/requirements. PR [#427](https://github.com/devsetgo/devtools/pull/427) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump coverage from 5.4 to 5.5 in /app/requirements. PR [#430](https://github.com/devsetgo/devtools/pull/430) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump tqdm from 4.57.0 to 4.58.0 in /app/requirements. PR [#425](https://github.com/devsetgo/devtools/pull/425) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mkdocs-material from 6.2.8 to 7.0.3 in /app/requirements. PR [#424](https://github.com/devsetgo/devtools/pull/424) by [@dependabot[bot]](https://github.com/apps/dependabot).
