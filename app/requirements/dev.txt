@@ -11,7 +11,7 @@ mkdocs==1.1.2
 mkdocs-material==7.0.3 # from 5.2.2
 mypy==0.812 # from 0.780
 pre-commit==2.10.1 # from 2.4.0
-pylint==2.7.1 # from 2.5.2
+pylint==2.7.2 # from 2.5.2
 pytest==6.2.2 # from 5.4.3
 pytest-asyncio==0.14.0 # from 0.12.0
 pytest-cov==2.11.1 # from 2.9.0
