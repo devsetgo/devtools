@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump pre-commit from 2.10.1 to 2.11.1 in /app/requirements. PR [#432](https://github.com/devsetgo/devtools/pull/432) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mkdocs-material from 7.0.4 to 7.0.5 in /app/requirements. PR [#433](https://github.com/devsetgo/devtools/pull/433) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mkdocs-material from 7.0.3 to 7.0.4 in /app/requirements. PR [#428](https://github.com/devsetgo/devtools/pull/428) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump tqdm from 4.58.0 to 4.59.0 in /app/requirements. PR [#426](https://github.com/devsetgo/devtools/pull/426) by [@dependabot[bot]](https://github.com/apps/dependabot).
