@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% block page_title %}| Camunda Task{% endblock %}
+{% block page_stylesheet %}
+<!-- DataTables -->
+<link rel="stylesheet" href="{{ url_for('static' , path='plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
+{% endblock %}
+{% block page_breadcrumb %} Camunda Task{% endblock %}
+{% block page_head_title %}Camunda Task {{task.name}}{% endblock %}
+{% block body %}
+<!-- Main content -->
+
+<section class="content">
+
+  <!-- Default box -->
+  <div class="card card-solid">
+    <div class="card-body pb-0">
+      <div class="row d-flex align-items-stretch">
+        <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">{{task.name}}</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            {{rendered_form|safe}}
+            
+            <!-- <form role="form">
+              
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">File input</label>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="exampleInputFile">
+                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                    </div>
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="">Upload</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+              </div> -->
+              <!-- /.card-body -->
+
+              <!-- <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form> -->
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card card-primary card-tabs">
+            <div class="card-header p-0 pt-1">
+              <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill"
+                    href="#custom-tabs-one-home" role="tab" aria-controls="custom-tabs-one-home"
+                    aria-selected="true">Comments</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="custom-tabs-one-profile-tab" data-toggle="pill"
+                    href="#custom-tabs-one-profile" role="tab" aria-controls="custom-tabs-one-profile"
+                    aria-selected="false">Attachments</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="custom-tabs-one-messages-tab" data-toggle="pill"
+                    href="#custom-tabs-one-messages" role="tab" aria-controls="custom-tabs-one-messages"
+                    aria-selected="false">History</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="custom-tabs-one-settings-tab" data-toggle="pill"
+                    href="#custom-tabs-one-settings" role="tab" aria-controls="custom-tabs-one-settings"
+                    aria-selected="false">Process</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <div class="tab-content" id="custom-tabs-one-tabContent">
+                <div class="tab-pane fade show active" id="custom-tabs-one-home" role="tabpanel"
+                  aria-labelledby="custom-tabs-one-home-tab">
+                  <div class="timeline">
+                    {% if comment.status == 'Error' %}
+                    There has been an error.
+                    {%else%}
+                    <!-- timeline time label -->
+                    <!-- <div class="time-label">
+                      <span class="bg-green">Task Comments</span>
+                    </div> -->
+                    <!-- /.timeline-label -->
+                    <!-- timeline item -->
+                    {%for c in comment.data %}
+                    <div>
+                      <i class="fas fa-comments bg-yellow"></i>
+                      <div class="timeline-item">
+                        <span class="time"><i class="fas fa-clock"></i> {{c.time}}</span>
+                        <h3 class="timeline-header">Comment By: {{c.userId}}</h3>
+                        <div class="timeline-body">
+                          {{c.message}}
+                        </div>
+                        <!-- <div class="timeline-footer">
+                          <a class="btn btn-warning btn-sm">View comment</a>
+                        </div> -->
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="tab-pane fade" id="custom-tabs-one-profile" role="tabpanel"
+                  aria-labelledby="custom-tabs-one-profile-tab">
+                  Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula
+                  tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas
+                  sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus.
+                  Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam.
+                </div>
+                <div class="tab-pane fade" id="custom-tabs-one-messages" role="tabpanel"
+                  aria-labelledby="custom-tabs-one-messages-tab">
+                  Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi
+                  placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique
+                  nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis
+                  urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non
+                  luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla
+                  lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus.
+                  Curabitur eget sem eu risus tincidunt eleifend ac ornare magna.
+                </div>
+                <div class="tab-pane fade" id="custom-tabs-one-settings" role="tabpanel"
+                  aria-labelledby="custom-tabs-one-settings-tab">
+                  Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac,
+                  ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod
+                  molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna
+                  nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut
+                  nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet
+                  facilisis.
+                </div>
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.card-body -->
+
+      </div>
+      <!-- /.card -->
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}
+
+{% block page_sidebar_content %}
+<!-- blank and demo script adds page configuration example -->
+<!-- <div class="p-3">
+  <h5>Title</h5>
+  <p>Sidebar content</p>
+</div> -->
+{% endblock %}
+{% block page_scripts %}
+<!-- page scripts-->
+<!-- DataTables -->
+<script src="{{ url_for('static' , path='plugins/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ url_for('static' , path='plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+<!-- AdminLTE App -->
+
+<!-- AdminLTE for demo purposes -->
+<script src="{{ url_for('static' , path='dist/js/demo.js') }}"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+    });
+  });
+</script>
+{% endblock %}

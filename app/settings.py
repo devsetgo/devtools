@@ -65,7 +65,10 @@ if USE_ENV.lower() == "dotenv":
     LOGURU_RETENTION = config("LOGURU_RETENTION", default="10 days")
     LOGURU_ROTATION = config("LOGURU_ROTATION", default="10 MB")
     LOGURU_LOGGING_LEVEL = config("LOGURU_LOGGING_LEVEL", default="WARNING")
-
+    # Camunda Settings
+    CAM_ENGINE_URL = config(
+        "CAM_ENGINE_URL", default="http://localhost:8080/engine-rest"
+    )
 
 else:
     logger.info(f"external configuration is for use with {USE_ENV.lower()}")
@@ -89,3 +92,5 @@ else:
     LOGURU_RETENTION = os.environ["LOGURU_RETENTION"]
     LOGURU_ROTATION = os.environ["LOGURU_ROTATION"]
     LOGURU_LOGGING_LEVEL = os.environ["LOGURU_LOGGING_LEVEL"]
+    # Camunda Settings
+    CAM_ENGINE_URL = os.environ["CAM_ENGINE_URL"]
