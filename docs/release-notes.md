@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump mkdocs-material from 7.0.6 to 7.1.0 in /app/requirements. PR [#443](https://github.com/devsetgo/devtools/pull/443) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Dev. PR [#439](https://github.com/devsetgo/devtools/pull/439) by [@devsetgo](https://github.com/devsetgo).
 * Bump async-asgi-testclient from 1.4.5 to 1.4.6 in /app/requirements. PR [#431](https://github.com/devsetgo/devtools/pull/431) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pre-commit from 2.10.1 to 2.11.1 in /app/requirements. PR [#432](https://github.com/devsetgo/devtools/pull/432) by [@dependabot[bot]](https://github.com/apps/dependabot).
