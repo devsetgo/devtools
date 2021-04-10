@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump pytest from 6.2.2 to 6.2.3 in /app/requirements. PR [#446](https://github.com/devsetgo/devtools/pull/446) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump gunicorn from 20.0.4 to 20.1.0 in /app/requirements. PR [#440](https://github.com/devsetgo/devtools/pull/440) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump databases[postgresql] from 0.4.2 to 0.4.3 in /app/requirements. PR [#441](https://github.com/devsetgo/devtools/pull/441) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump mkdocs-material from 7.0.6 to 7.1.0 in /app/requirements. PR [#443](https://github.com/devsetgo/devtools/pull/443) by [@dependabot[bot]](https://github.com/apps/dependabot).
