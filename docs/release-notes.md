@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump tqdm from 4.59.0 to 4.60.0 in /app/requirements. PR [#449](https://github.com/devsetgo/devtools/pull/449) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pre-commit from 2.11.1 to 2.12.0 in /app/requirements. PR [#447](https://github.com/devsetgo/devtools/pull/447) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pytest from 6.2.2 to 6.2.3 in /app/requirements. PR [#446](https://github.com/devsetgo/devtools/pull/446) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump gunicorn from 20.0.4 to 20.1.0 in /app/requirements. PR [#440](https://github.com/devsetgo/devtools/pull/440) by [@dependabot[bot]](https://github.com/apps/dependabot).
