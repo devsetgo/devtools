@@ -63,7 +63,7 @@ routes = [
         methods=["GET", "POST"],
     ),
     # Mount("/pypi/process",pypi_pages.pypi_process_stream),
-    Mount("/static", app=StaticFiles(directory="statics"), name="static"),
+    Mount("/static", app=StaticFiles(directory="static"), name="static"),
 ]
 
 
