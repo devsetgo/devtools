@@ -44,3 +44,9 @@ def init_app():
     # logger.info("Initiating application")
     create_db()
     logger.info("Initiating database")
+
+
+def _dummy_function():
+    for r in range(100):
+        print(f"range number {r}")
+    
