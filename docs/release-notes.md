@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump mkdocs-material from 7.1.0 to 7.1.1 in /app/requirements. PR [#451](https://github.com/devsetgo/devtools/pull/451) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pre-commit from 2.12.0 to 2.12.1 in /app/requirements. PR [#452](https://github.com/devsetgo/devtools/pull/452) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump flake8 from 3.9.0 to 3.9.1 in /app/requirements. PR [#450](https://github.com/devsetgo/devtools/pull/450) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump tqdm from 4.59.0 to 4.60.0 in /app/requirements. PR [#449](https://github.com/devsetgo/devtools/pull/449) by [@dependabot[bot]](https://github.com/apps/dependabot).
