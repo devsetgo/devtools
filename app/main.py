@@ -36,7 +36,11 @@ routes = [
                 endpoint=cam_pages.task_item,
                 methods=["GET", "POST", "UPDATE", "DELETE"],
             ),
-            Route("/task-list", endpoint=cam_pages.task_list, methods=["GET", "POST"],),
+            Route(
+                "/task-list",
+                endpoint=cam_pages.task_list,
+                methods=["GET", "POST"],
+            ),
         ],
         name="camunda",
     ),

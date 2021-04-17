@@ -16,12 +16,12 @@ async def camunda_call(url):
         r = httpx.get(url)
         r.raise_for_status()
         data = r.json()
-        status_code= r.status_code
-        logger.info(f'API status cide of {status_code}')
+        status_code = r.status_code
+        logger.info(f"API status cide of {status_code}")
     except httpx.RequestError as exc:
-        logger.info(f'API Call Error {exc}')
+        logger.info(f"API Call Error {exc}")
         status_code = "Error"
-        data=[]
+        data = []
 
     result = {"status": status_code, "data": data}
     return result

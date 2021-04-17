@@ -49,4 +49,3 @@ def init_app():
 def _dummy_function():
     for r in range(100):
         print(f"range number {r}")
-    

@@ -24,18 +24,17 @@ async def task_list(request):
     Task List
     """
     task_url = f"{base_url}/task"
-    
-    
+
     try:
         r = httpx.get(task_url)
         r.raise_for_status()
         tasks = r.json()
-        status_code= r.status_code
-        logger.info(f'API status cide of {status_code}')
+        status_code = r.status_code
+        logger.info(f"API status cide of {status_code}")
     except httpx.RequestError as exc:
-        logger.info(f'API Call Error {exc}')
+        logger.info(f"API Call Error {exc}")
         status_code = "Error"
-        tasks=[]
+        tasks = []
 
     data = {"status": status_code, "tasks": tasks}
 
@@ -47,7 +46,7 @@ async def task_list(request):
 
 async def task_item(request):
     """
-    Task Item 
+    Task Item
     """
     task_id = request.path_params["page"]
     logger.info(f"fetching data for ID: {task_id}")
@@ -65,7 +64,7 @@ async def task_item(request):
         "task": task,
         "taskId": task_id,
         "comment": comment,
-        'rendered_form':rendered_form,
+        "rendered_form": rendered_form,
     }
     logger.info(f"page accessed: /{template}")
     return templates.TemplateResponse(template, context)
