@@ -1,5 +1,6 @@
 # Release Notes
 
+* Dev. PR [#455](https://github.com/devsetgo/devtools/pull/455) by [@devsetgo](https://github.com/devsetgo).
 * Updates. PR [#454](https://github.com/devsetgo/devtools/pull/454) by [@devsetgo](https://github.com/devsetgo).
 * Bump mkdocs-material from 7.1.0 to 7.1.1 in /app/requirements. PR [#451](https://github.com/devsetgo/devtools/pull/451) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump pre-commit from 2.12.0 to 2.12.1 in /app/requirements. PR [#452](https://github.com/devsetgo/devtools/pull/452) by [@dependabot[bot]](https://github.com/apps/dependabot).
