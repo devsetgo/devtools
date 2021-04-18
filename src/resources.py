@@ -11,7 +11,7 @@ from endpoints.main.crud import get_data
 
 # templates and static files
 templates = Jinja2Templates(directory="templates")
-statics = StaticFiles(directory="statics")
+statics = StaticFiles(directory="static")
 
 
 async def startup():

@@ -2,8 +2,8 @@ FROM python:3.8-slim-buster
 RUN apt-get update && apt-get -y install gcc
 MAINTAINER Mike Ryan "mikeryan56@gmail.com"
 EXPOSE 5000
-COPY . /app
-WORKDIR /app
+COPY . /src
+WORKDIR /src
 # Evironment Variables
 ENV USE_ENV='docker'
 # Application information

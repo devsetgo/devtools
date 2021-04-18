@@ -17,7 +17,6 @@ from com_lib import logging_config
 from endpoints.health import endpoints as health_pages
 from endpoints.main import endpoints as main_pages
 from endpoints.pypi_check import endpoints as pypi_pages
-from endpoints.camunda import endpoints as cam_pages
 from endpoints.modeler import endpoints as modeler_pages
 
 logging_config.config_log()
@@ -28,22 +27,6 @@ routes = [
     Route("/index", endpoint=main_pages.index, methods=["GET"]),
     Route("/about", endpoint=main_pages.about_page, methods=["GET"]),
     Route("/health", endpoint=health_pages.health_status, methods=["GET"]),
-    Mount(
-        "/camunda",
-        routes=[
-            Route(
-                "/task-item/{page}",
-                endpoint=cam_pages.task_item,
-                methods=["GET", "POST", "UPDATE", "DELETE"],
-            ),
-            Route(
-                "/task-list",
-                endpoint=cam_pages.task_list,
-                methods=["GET", "POST"],
-            ),
-        ],
-        name="camunda",
-    ),
     Mount(
         "/modeler",
         routes=[
@@ -63,7 +46,7 @@ routes = [
         methods=["GET", "POST"],
     ),
     # Mount("/pypi/process",pypi_pages.pypi_process_stream),
-    Mount("/static", app=StaticFiles(directory="statics"), name="static"),
+    Mount("/static", app=StaticFiles(directory="static"), name="static"),
 ]
 
 
