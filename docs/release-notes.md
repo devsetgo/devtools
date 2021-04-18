@@ -1,5 +1,6 @@
 # Release Notes
 
+* autoflake and flake8 fixes. PR [#459](https://github.com/devsetgo/devtools/pull/459) by [@devsetgo](https://github.com/devsetgo).
 * update. PR [#458](https://github.com/devsetgo/devtools/pull/458) by [@devsetgo](https://github.com/devsetgo).
 * SonarCloud Changes. PR [#457](https://github.com/devsetgo/devtools/pull/457) by [@devsetgo](https://github.com/devsetgo).
 * Dev. PR [#455](https://github.com/devsetgo/devtools/pull/455) by [@devsetgo](https://github.com/devsetgo).
