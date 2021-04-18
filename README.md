@@ -52,7 +52,7 @@ Browser localhost:5000 (or where ever you have it running)
 
 
 ### Try The App
-
+Sample to copy into tool
 ```console
 
 httpx
