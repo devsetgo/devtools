@@ -5,8 +5,9 @@ gunicorn config reference: https://github.com/benoitc/gunicorn/blob/master/examp
 """
 
 
-from settings import LOGURU_LOGGING_LEVEL
 import multiprocessing  # noqa
+
+from settings import LOGURU_LOGGING_LEVEL
 
 # ip and port to bind
 bind = "0.0.0.0:5000"

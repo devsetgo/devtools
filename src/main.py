@@ -16,8 +16,8 @@ from com_lib import exceptions
 from com_lib import logging_config
 from endpoints.health import endpoints as health_pages
 from endpoints.main import endpoints as main_pages
-from endpoints.pypi_check import endpoints as pypi_pages
 from endpoints.modeler import endpoints as modeler_pages
+from endpoints.pypi_check import endpoints as pypi_pages
 
 logging_config.config_log()
 resources.init_app()

@@ -3,9 +3,8 @@
 Application health endpoints
 """
 from loguru import logger
-from starlette.responses import JSONResponse
-from resources import templates
 
+from resources import templates
 
 base: str = "modeler_pages"
 
