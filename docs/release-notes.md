@@ -1,5 +1,6 @@
 # Release Notes
 
+* SonarCloud Changes. PR [#457](https://github.com/devsetgo/devtools/pull/457) by [@devsetgo](https://github.com/devsetgo).
 * Dev. PR [#455](https://github.com/devsetgo/devtools/pull/455) by [@devsetgo](https://github.com/devsetgo).
 * Updates. PR [#454](https://github.com/devsetgo/devtools/pull/454) by [@devsetgo](https://github.com/devsetgo).
 * Bump mkdocs-material from 7.1.0 to 7.1.1 in /app/requirements. PR [#451](https://github.com/devsetgo/devtools/pull/451) by [@dependabot[bot]](https://github.com/apps/dependabot).
