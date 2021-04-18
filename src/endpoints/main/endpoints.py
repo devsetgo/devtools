@@ -4,7 +4,6 @@ from starlette.responses import RedirectResponse
 
 from endpoints.main import crud as lib_crud
 from resources import templates
-import json
 
 
 async def homepage(request):

@@ -67,9 +67,9 @@ def clean_item(items: list):
 
         if (
             len(i.strip()) != 0
-            and comment is False
-            and recur_file is False
-            and empty_line is False
+            and comment is False  # noqa
+            and recur_file is False  # noqa
+            and empty_line is False  # noqa
         ):
 
             logger.debug(i)
@@ -81,7 +81,6 @@ def clean_item(items: list):
                 bracket_content = pattern_between_two_char(i)
                 logger.debug(bracket_content)
 
-            logicList = ["==", ">=", "<=", ">", "<"]
             if "==" in i:
                 new_i = i.replace("==", " ")
             elif ">=" in i:
@@ -95,7 +94,6 @@ def clean_item(items: list):
             else:
                 new_i = i
 
-            bracketList = ["[", "]", "(", ")"]
             cleaned_up_i = re.sub("[\\(\\[].*?[\\)\\]]", "", new_i)
             logger.debug(cleaned_up_i)
             m = cleaned_up_i
@@ -117,7 +115,7 @@ def clean_item(items: list):
 
             logger.debug(cleaned_lib["library"])
             lib = cleaned_lib["library"]
-            if not any(l["library"] == lib for l in results):
+            if not any(l["library"] == lib for l in results):  # noqa
                 results.append(cleaned_lib)
     logger.debug(results)
     return results
