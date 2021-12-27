@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   devtools:
-    image: mikeryan56/devtools:20-05-29-rc
+    image: mikeryan56/devtools:latest
     restart: always
     ports:
     - "5000"
