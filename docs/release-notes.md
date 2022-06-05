@@ -1,5 +1,6 @@
 # Release Notes
 
+* Bump mkdocs from 1.1.2 to 1.2.3 in /src/requirements. PR [#461](https://github.com/devsetgo/devtools/pull/461) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * Bump httpx from 0.17.1 to 0.23.0 in /src/requirements. PR [#460](https://github.com/devsetgo/devtools/pull/460) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * autoflake and flake8 fixes. PR [#459](https://github.com/devsetgo/devtools/pull/459) by [@devsetgo](https://github.com/devsetgo).
 * update. PR [#458](https://github.com/devsetgo/devtools/pull/458) by [@devsetgo](https://github.com/devsetgo).
